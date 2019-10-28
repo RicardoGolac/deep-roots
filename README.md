@@ -7,6 +7,7 @@ Ricardo Golac
 Roberto Pantoja
 Krishan Patel
 Aleksei "Sandro" Witty
+Irene Allman
 
 ## How to contribute to Deep Roots
 
