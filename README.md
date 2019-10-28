@@ -6,6 +6,7 @@ Team Members:
 Ricardo Golac
 Roberto Pantoja
 Krishan Patel
+Aleksei "Sandro" Witty
 
 ## How to contribute to Deep Roots
 
