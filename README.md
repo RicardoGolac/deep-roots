@@ -8,6 +8,7 @@ Roberto Pantoja
 Krishan Patel
 Aleksei "Sandro" Witty
 Irene Allman
+Emily Bauer
 
 ## How to contribute to Deep Roots
 
