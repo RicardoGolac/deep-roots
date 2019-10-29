@@ -5,7 +5,7 @@ This is a MERN Stack web application that serves as the main website for artist 
 Team Members:
 Ricardo Golac
 Roberto Pantoja
-Krishan Patel
+Krishan Patela
 
 ## How to contribute to Deep Roots
 
