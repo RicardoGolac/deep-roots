@@ -10,6 +10,11 @@ This is a MERN Stack web application that serves as the main website for artist 
 4. Aleksei "Sandro" Witty
 5. Irene Allman
 6. Emily Bauer
+=======
+Team Members:
+Ricardo Golac
+Roberto Pantoja
+Krishan Patela
 
 ## How to contribute to Deep Roots
 
