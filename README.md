@@ -3,6 +3,7 @@
 This is a MERN Stack web application that serves as the main website for artist Turbado Marabou.
 
 ### Team Members:
+
 1. Ricardo Golac
 2. Roberto Pantoja
 3. Krishan Patel
