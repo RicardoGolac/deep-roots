@@ -2,6 +2,7 @@
 
 This is a MERN Stack web application that serves as the main website for artist Turbado Marabou.
 
+<<<<<<< HEAD
 Team Members:
 Ricardo Golac
 This change should not be committed!
@@ -10,6 +11,16 @@ Krishan Patel
 Aleksei "Sandro" Witty
 Irene Allman
 Emily Bauer <3
+=======
+### Team Members:
+
+1. Ricardo Golac
+2. Roberto Pantoja
+3. Krishan Patel
+4. Aleksei "Sandro" Witty
+5. Irene Allman
+6. Emily Bauer
+>>>>>>> e1ec1e96809d0d92ae83470732c2fce05f319df1
 
 ## How to contribute to Deep Roots
 
