@@ -1,17 +1,16 @@
 const express = require("express");
 const router = express.Router();
+const bcrypt = require("bcrypt.js");
+const jwt = require("jsonwebtoken");
+const db = require("./server/config/keys").mongoURI;
 
-// Item Model
+// User Model
 const Item = require("../../models/Item");
 
-// @route GET api/items
-// @desc  Get All Items
+// @route POST api/auth
+// @desc  Auth user
 // @access Public
-router.get("/", (req, res) => {
-  Item.find()
-    .sort({ date: -1 })
-    .then(items => res.json(items));
-});
+router.post("/", (req, res) => {});
 
 // @route POST api/items
 // @desc  Create An Item
