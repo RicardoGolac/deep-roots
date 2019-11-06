@@ -5,6 +5,6 @@
 module.exports = {
   //place the URI of your mongo database here.
   mongoURI:
-    "mongodb+srv://afwitty:717375Ab!@cen3031-seeder-yu7cy.mongodb.net/test?retryWrites=true&w=majority"
+    "mongodb+srv://guest:cen3031access@cen3031-seeder-yu7cy.mongodb.net/test?retryWrites=true&w=majority"
     // get my own link
 };
