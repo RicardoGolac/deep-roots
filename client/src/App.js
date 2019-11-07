@@ -13,6 +13,7 @@ import Gallery from "./components/Gallery";
 import Login from "./components/Login";
 import Protected from "./components/Protected";
 import Register from "./components/Register";
+import Dashboard from "./components/Dashboard";
 
 class App extends Component {
   constructor(props) {
@@ -32,7 +33,7 @@ class App extends Component {
   }
 
   getUser() {
-    axios.get("/auth/").then(response => {
+    axios.get("/users/").then(response => {
       console.log("Get user response: ");
       console.log("This is the get response.data: " + response.data);
       if (response.data) {
@@ -94,7 +95,7 @@ class App extends Component {
           user: {}
         });
         console.log("Logout was successful!");
-        window.location = "/auth/login";
+        window.location = "/users/login";
       } else {
         console.log("Logout out failed - server error");
       }
@@ -130,6 +131,15 @@ class App extends Component {
           />
           <Route path="/gallery" render={() => <Gallery />} />
           <AuthenticatedComponent verify={this.verify}>
+            <Route
+              path="/dashboard"
+              render={() => (
+                <Dashboard
+                  loggedIn={this.state.loggedIn}
+                  user={this.state.user}
+                />
+              )}
+            />
             <Route path="/protected" component={Protected} />
           </AuthenticatedComponent>
         </Switch>

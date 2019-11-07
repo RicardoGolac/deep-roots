@@ -1,13 +1,14 @@
 const express = require("express");
 const mongooseSetup = require("./server/config/database");
 const bodyParser = require("body-parser");
+const mongoose = require("mongoose");
 // Authentication imports
 const session = require("express-session");
 const MongoStore = require("connect-mongo")(session);
 const passport = require("passport");
 // List of Routes (name them in plural form)
-const items = require("./server/routes/items");
 const users = require("./server/routes/users");
+const index = require("./server/routes/index");
 // Passport Config
 require("./server/config/passport")(passport);
 
@@ -31,7 +32,7 @@ app.use(
     resave: false,
     saveUninitialized: false,
     secret: "secret",
-    store: new MongoStore({ mongooseConnection: mongooseSetup.connection }),
+    store: new MongoStore({ mongooseConnection: mongoose.connection }),
     cookie: {
       httpOnly: true,
       secure: false,
@@ -54,7 +55,7 @@ app.use((req, res, next) => {
 
 // Use Routes
 // List All Routes here
-app.use("/items", items);
+app.use("/", index);
 app.use("/users", users);
 
 app.listen(port, () => console.log(`Server started on port ${port}`));

@@ -6,10 +6,12 @@ import {
   NavbarBrand,
   Nav,
   NavItem,
+  NavLink,
   Container
 } from "reactstrap";
 import { Link } from "react-router-dom";
 import Logout from "./Logout";
+import "../css/appnavbar.css";
 
 class AppNavBar extends Component {
   state = {
@@ -28,32 +30,45 @@ class AppNavBar extends Component {
     };
     return (
       <div>
-        <Navbar color="dark" dark expand="sm" className="mb-5">
+        <Navbar color="dark" dark expand="sm" className="mb-5 appnavbar">
           <Container>
             <NavbarBrand>
-              <Link to="/" exact>
+              <NavLink tag={Link} to="/">
                 Deep Roots
-              </Link>
+              </NavLink>
             </NavbarBrand>
             <NavbarToggler onClick={this.toggle} />
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="ml-auto" navbar>
-                <NavItem>
-                  <Link to="/gallery">Gallery</Link>
+                <NavItem className="">
+                  <NavLink tag={Link} to="/gallery">
+                    Gallery
+                  </NavLink>
                 </NavItem>
                 {!this.props.loggedIn ? (
                   <>
                     <NavItem>
-                      <Link to="/users/register">Register</Link>
+                      <NavLink tag={Link} to="/users/register">
+                        Register
+                      </NavLink>
                     </NavItem>
                     <NavItem>
-                      <Link to="/users/login">Login</Link>
+                      <NavLink tag={Link} to="/users/login">
+                        Login
+                      </NavLink>
                     </NavItem>
                   </>
                 ) : (
                   <>
                     <NavItem>
-                      <Link to="/protected">Protected</Link>
+                      <NavLink tag={Link} to="/protected">
+                        Protected
+                      </NavLink>
+                    </NavItem>
+                    <NavItem>
+                      <NavLink tag={Link} to="/dashboard">
+                        Dashboard
+                      </NavLink>
                     </NavItem>
                     <NavItem>
                       <Logout logout={logout} />

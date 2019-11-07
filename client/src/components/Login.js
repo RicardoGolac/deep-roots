@@ -3,7 +3,9 @@ import { withRouter, Redirect } from "react-router-dom";
 
 class Login extends Component {
   constructor(props) {
+    // Necessary for class components
     super(props);
+    console.log(props);
 
     // binding this TODO: Convert class components to hooks
     this.onChange = this.onChange.bind(this);
@@ -13,7 +15,7 @@ class Login extends Component {
     this.state = {
       email: "",
       password: "",
-      redirectTo: "/home",
+      redirectTo: "/dashboard",
       loginError: "",
       isLoading: false
     };
@@ -45,7 +47,7 @@ class Login extends Component {
 
         console.log(`Successfully logged in! ${JSON.stringify(data)}`);
 
-        this.props.history.push("/home");
+        this.props.history.push("/dashboard");
       } else {
         this.setState({
           email: "",
