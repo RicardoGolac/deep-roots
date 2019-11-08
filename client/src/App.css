@@ -1,0 +1,17 @@
+/* SURVEY */
+
+.SurveyHeader {
+    background-color: #222;
+    height: 80px;
+    padding: 20px;
+    color: white;
+  }
+  .surveyjs {
+      margin: 20px;
+  }
+  .lcinfo {
+      text-align: center
+  }
+  .newspacing {
+      margin: 20px;
+  }
