@@ -53,3 +53,7 @@ This is a MERN Stack web application that serves as the main website for artist 
    - Provide a good description of what changes you made
    - Submit your pull request
 8. Wait for someone to review and approve your changes
+
+### Reviewing a pull request
+
+1. Hi there!
