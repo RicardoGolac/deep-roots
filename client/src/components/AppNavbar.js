@@ -21,6 +21,8 @@ class AppNavBar extends Component {
     });
   };
 
+  // The Link towards Sponsor extention goes into the double quotes of line #37. -Sandro
+
   render() {
     return (
       <div>
@@ -29,6 +31,15 @@ class AppNavBar extends Component {
             <NavbarBrand href="/">Deep Roots</NavbarBrand>
             <NavbarToggler onClick={this.toggle} />
             <Collapse isOpen={this.state.isOpen} navbar>
+
+              <Nav className="ml-auto" navbar>
+                <NavItem>
+                  <NavLink href=""> 
+                    Sponsors
+                  </NavLink>
+                </NavItem>
+              </Nav>
+              
               <Nav className="ml-auto" navbar>
                 <NavItem>
                   <NavLink href="https://github.com/RicardoGolac/deep-roots">
