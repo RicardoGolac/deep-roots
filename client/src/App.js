@@ -5,7 +5,6 @@ import axios from "axios";
 import history from "./history";
 import "./App.css";
 
-<<<<<<< HEAD
 // Components
 import AppNavbar from "./components/AppNavbar";
 import AuthenticatedComponent from "./components/AuthenticatedComponent";
@@ -149,33 +148,6 @@ class App extends Component {
       </Router>
     );
   }
-=======
-class App extends React.Component {
-
-  render() { 
-    return (
-      <div>
-        <Search 
-        filterText = {this.state.filterText}
-        filterUpdate = {this.filterUpdate.bind(this)} 
-        />
-        <main>
-          <ShortList 
-            favorites = {this.state.favorites}
-            data = {this.props.data}
-          />
-          <NamesList 
-          data={this.props.data}
-          filterText = {this.state.filterText}
-          addFavorites={this.addFavorites.bind(this)}
-          />
-          <Credit />
-        </main>
-      </div>
-    )
-  }
-
->>>>>>> fd71e3a4aa153ca5501cb75d7ef07f2e5e1f83dd
 }
 
 export default App;
