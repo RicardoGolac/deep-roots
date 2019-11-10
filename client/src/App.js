@@ -11,7 +11,6 @@ import AuthenticatedComponent from "./components/AuthenticatedComponent";
 import Home from "./components/Home";
 import Gallery from "./components/Gallery";
 import Login from "./components/Login";
-import Protected from "./components/Protected";
 import Register from "./components/Register";
 import Dashboard from "./components/Dashboard";
 import Footer from "./components/Footer";
@@ -141,7 +140,6 @@ class App extends Component {
                 />
               )}
             />
-            <Route path="/protected" component={Protected} />
           </AuthenticatedComponent>
         </Switch>
         <Footer />
