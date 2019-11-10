@@ -1,27 +1,61 @@
 const express = require("express");
-const mongoose = require("mongoose");
+const mongooseSetup = require("./server/config/database");
 const bodyParser = require("body-parser");
+const mongoose = require("mongoose");
+// Authentication imports
+const session = require("express-session");
+const MongoStore = require("connect-mongo")(session);
+const passport = require("passport");
+// List of Routes (name them in plural form)
+const users = require("./server/routes/users");
+const index = require("./server/routes/index");
+// Passport Config
+require("./server/config/passport")(passport);
 
-// List of Routes
-const items = require("./server/routes/api/items");
-
+// Start express server
 const app = express();
+app.set("trust proxy", true);
 
 // Bodyparser Middleware
-app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json()); // allows us to deal with form data and json data
 
-// DB Config
-const db = require("./server/config/keys").mongoURI;
-
-// Connect to Mongo
-mongoose
-  .connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => console.log("MongoDB Connected..."))
-  .catch(err => console.log(err));
-
-// Use Routes
-app.use("/api/items", items);
+// Connect to Database
+mongooseSetup.start();
 
 const port = process.env.PORT || 5000;
+
+// Express session middleware
+app.use(
+  session({
+    name: "sid",
+    resave: false,
+    saveUninitialized: false,
+    secret: "secret",
+    store: new MongoStore({ mongooseConnection: mongoose.connection }),
+    cookie: {
+      httpOnly: true,
+      secure: false,
+      maxAge: 1000 * 60 * 60 * 24 * 1 // day
+    }
+  })
+);
+
+// Passport Middleware
+app.use(passport.initialize());
+app.use(passport.session());
+
+// Globals
+app.use((req, res, next) => {
+  if (req.session) {
+    res.locals.session = req.session;
+  }
+  next();
+});
+
+// Use Routes
+// List All Routes here
+app.use("/", index);
+app.use("/users", users);
 
 app.listen(port, () => console.log(`Server started on port ${port}`));
