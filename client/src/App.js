@@ -13,6 +13,7 @@ import Gallery from "./components/Gallery";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import Dashboard from "./components/Dashboard";
+import LifeCoaching from "./components/LifeCoaching";
 import Footer from "./components/Footer";
 
 class App extends Component {
@@ -130,6 +131,7 @@ class App extends Component {
             )}
           />
           <Route path="/gallery" render={() => <Gallery />} />
+          <Route path="/lifecoaching" component={LifeCoaching} />
           <AuthenticatedComponent verify={this.verify}>
             <Route
               path="/dashboard"
