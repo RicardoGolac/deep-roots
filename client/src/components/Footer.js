@@ -4,7 +4,7 @@ import { Container, Nav, NavItem } from "reactstrap";
 
 function Footer() {
   return (
-    <Container>
+    <Container className="footer-view-container">
       <Nav justified>
         <NavItem eventKey={1}>Privacy policy</NavItem>
         <NavItem eventKey={2} title="Item">

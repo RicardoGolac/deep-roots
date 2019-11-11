@@ -9,5 +9,10 @@ Container {
   margin: 20px 0 0;
 }
 
+.footer-view-container {
+  background-color: #ffffff;
+}
+
 .copyright {
+  background-color: #ffffff;
 }
