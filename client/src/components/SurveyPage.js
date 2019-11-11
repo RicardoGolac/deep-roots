@@ -1,6 +1,7 @@
 //In your react App.js or yourComponent.js file add these lines to import
 import React, { Component } from "react";
 import * as Survey from "surveyjs-react";
+import "../css/surveypage.css";
 
 var defaultThemeColors = Survey
     .StylesManager
@@ -20,6 +21,7 @@ var myCss = {
   row: "newspacing",
   navigationButton: "button btn-lg",
 };
+
 
 //state that reads from database
 //make button to change data in listing and update it
@@ -169,7 +171,7 @@ class SurveyPage extends Component {
         <Survey.Survey
           model={model}
           css={myCss}
-          onComplete={this.onComplete}
+          onComplete={this.onComplete.bind(this)}
           
         />
 

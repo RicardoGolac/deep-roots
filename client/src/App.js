@@ -14,6 +14,7 @@ import Login from "./components/Login";
 import Protected from "./components/Protected";
 import Register from "./components/Register";
 import Dashboard from "./components/Dashboard";
+import LifeCoaching from "./components/LifeCoaching";
 
 class App extends Component {
   constructor(props) {
@@ -130,6 +131,7 @@ class App extends Component {
             )}
           />
           <Route path="/gallery" render={() => <Gallery />} />
+          <Route path="/lifecoaching" component={LifeCoaching} />
           <AuthenticatedComponent verify={this.verify}>
             <Route
               path="/dashboard"
