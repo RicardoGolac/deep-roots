@@ -12,6 +12,9 @@ const index = require("./server/routes/index");
 // Passport Config
 require("./server/config/passport")(passport);
 
+// Associations
+const associations = require('./server/routes/associations');
+
 // Start express server
 const app = express();
 app.set("trust proxy", true);
@@ -57,5 +60,6 @@ app.use((req, res, next) => {
 // List All Routes here
 app.use("/", index);
 app.use("/users", users);
+app.use("/associations",associations);
 
 app.listen(port, () => console.log(`Server started on port ${port}`));
