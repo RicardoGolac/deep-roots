@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import SurveyPage from "./SurveyPage";
+import "../css/lifecoaching.css";
 
 class LifeCoaching extends Component {
     constructor(props) {
@@ -19,10 +20,13 @@ class LifeCoaching extends Component {
     render() {
         return (
             <div>
+                <div>
+                <p className="lctitle">Creative Life Coaching</p>
+                <p className="lcsubtitle">Taking the Journey Together</p>
+                </div>
                 <div className="lcinfo">
-                <p>Life Coaching Services</p>
-                <p>Life coaching can do these things for you: blah blah</p>
-                <p>Life coaching rates are typically $1/hr</p>
+                <p>Life coaching about section</p>
+                <p>Life coaching rates section</p>
                 <p>Typically limited to 2 months</p>
                 </div>
                 <div className="question">

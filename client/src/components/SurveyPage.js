@@ -2,16 +2,14 @@
 import React, { Component } from "react";
 import * as Survey from "surveyjs-react";
 import "../css/surveypage.css";
+import axios from "axios";
 
 var defaultThemeColors = Survey
     .StylesManager
     .ThemeColors["default"];
-defaultThemeColors["$main-color"] = "#329400"; //complete button
-defaultThemeColors["$main-hover-color"] = "#6fe06f";
-defaultThemeColors["$text-color"] = "#4a4a4a";
+defaultThemeColors["$main-color"] = "#329400"; //complete button color
+defaultThemeColors["$text-color"] = "#4a4a4a"; //text color
 
-defaultThemeColors["$header-background-color"] = "#4a4a4a";
-defaultThemeColors["$body-container-background-color"] = "#f8f8f8";
 
 Survey
     .StylesManager
@@ -27,6 +25,18 @@ var myCss = {
 //make button to change data in listing and update it
 //make routes
 class SurveyPage extends Component {
+  constructor(props) {
+
+    super(props);
+
+    this.onComplete = this.onComplete.bind(this);
+
+    //Setting the default state
+    this.state = {
+      message: ""
+    };
+  }
+
  //Define Survey JSON
  json = {
   title: "Life Coaching Survey",
@@ -139,29 +149,32 @@ class SurveyPage extends Component {
     ]
    };
 
- //Define a callback methods on survey complete
- onComplete(survey, options) {
-  //Write survey results into database
+ //callback method on survey complete
+ onComplete(survey, e) {
+  //log results and post request to route to mailer
   console.log("Survey results: " + JSON.stringify(survey.data));
+
+  const message = JSON.stringify(survey.data);
+  axios({
+    method: "POST", 
+    url:"http://localhost:3000/send/complete", 
+    data: {
+        messsage: survey.data
+    }
+}).then((response)=>{
+    if (response.data.msg === 'success'){
+        alert("Message Sent."); 
+    }else if(response.data.msg === 'fail'){
+        alert("Message failed to send.")
+    }
+})
+
  }
  
  render() {
-  //Create the model and pass it into react Survey component
-  //You may create survey model outside the render function and use it in your App or component
-  //The most model properties are reactive, on their change the component will change UI when needed.
+  //make survey model to be rendered
   var model = new Survey.Model(this.json);
-  //return (<Survey.Survey model={model} onComplete={this.onComplete}/>);
-  /*
-  //The alternative way. react Survey component will create survey model internally
-  return (<Survey.Survey json={this.json} onComplete={this.onComplete}/>);
-  */
-  //You may pass model properties directly into component or set it into model
-  // <Survey.Survey model={model} mode="display"/>
-  //or 
-  // model.mode="display"
-  // <Survey.Survey model={model}/>
-  // You may change model properties outside render function. 
-  //If needed react Survey Component will change its behavior and change UI.
+
   return (
     <div className="Survey">
       <div className="SurveyHeader">
