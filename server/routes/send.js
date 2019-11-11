@@ -3,7 +3,7 @@ const router = express.Router();
 var nodemailer = require('nodemailer');
 var bodyParser = require('body-parser');
 var jsonParser = bodyParser.json();
-//const creds = require('../config/config');
+//const creds = require('../config/mailer'); set up for real email
 
 var transport = nodemailer.createTransport({
     host: "smtp.mailtrap.io",
@@ -29,8 +29,8 @@ router.post('/complete', jsonParser, (req, res) => {
     var content = `message: ${message} `
     var mail = {
       from: 'surveybot@dr.com',
-      to: 'emmit.bauer@yahoo.com',  //Change to email address that you want to receive messages on
-      subject: 'New Message from Survey',
+      to: 'turbado@dr.com',  
+      subject: 'New Life Coaching Survey Filled Out!',
       text: message
     }
   

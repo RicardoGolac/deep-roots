@@ -1,4 +1,3 @@
-//In your react App.js or yourComponent.js file add these lines to import
 import React, { Component } from "react";
 import * as Survey from "surveyjs-react";
 import "../css/surveypage.css";
@@ -21,9 +20,6 @@ var myCss = {
 };
 
 
-//state that reads from database
-//make button to change data in listing and update it
-//make routes
 class SurveyPage extends Component {
   constructor(props) {
 
@@ -150,11 +146,10 @@ class SurveyPage extends Component {
    };
 
  //callback method on survey complete
- onComplete(survey, e) {
+ onComplete(survey) {
   //log results and post request to route to mailer
   console.log("Survey results: " + JSON.stringify(survey.data));
 
-  const message = JSON.stringify(survey.data);
   axios({
     method: "POST", 
     url:"http://localhost:3000/send/complete", 
