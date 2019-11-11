@@ -4,7 +4,7 @@
   "description": "MERN Stack web application for Deep Roots",
   "main": "server.js",
   "scripts": {
-    "test": "mocha server/tests",
+    "test": "mocha server/test",
     "client-install": "npm install --prefix client",
     "start": "node server/server.js",
     "server": "nodemon server/server.js",

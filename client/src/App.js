@@ -11,10 +11,13 @@ import AuthenticatedComponent from "./components/AuthenticatedComponent";
 import Home from "./components/Home";
 import Gallery from "./components/Gallery";
 import Login from "./components/Login";
-import Protected from "./components/Protected";
 import Register from "./components/Register";
 import Dashboard from "./components/Dashboard";
+<<<<<<< HEAD
 import LifeCoaching from "./components/LifeCoaching";
+=======
+import Footer from "./components/Footer";
+>>>>>>> b454fe5ff571b8f7cf82b3102e12bc78381d493a
 
 class App extends Component {
   constructor(props) {
@@ -142,9 +145,9 @@ class App extends Component {
                 />
               )}
             />
-            <Route path="/protected" component={Protected} />
           </AuthenticatedComponent>
         </Switch>
+        <Footer />
       </Router>
     );
   }
