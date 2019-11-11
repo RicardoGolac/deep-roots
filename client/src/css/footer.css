@@ -1,0 +1,13 @@
+#content {
+  padding-top: 70px;
+  min-height: ~"calc(100vh - 92px)";
+}
+
+Container {
+  border-radius: 0 !important;
+  border-bottom: 0;
+  margin: 20px 0 0;
+}
+
+.copyright {
+}
