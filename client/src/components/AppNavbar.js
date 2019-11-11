@@ -59,11 +59,6 @@ class AppNavBar extends Component {
                 ) : (
                   <>
                     <NavItem>
-                      <NavLink tag={Link} to="/protected">
-                        Protected
-                      </NavLink>
-                    </NavItem>
-                    <NavItem>
                       <NavLink tag={Link} to="/dashboard">
                         Dashboard
                       </NavLink>
