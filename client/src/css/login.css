@@ -1,0 +1,79 @@
+.login-view-container {
+  background-color: #dce9ec;
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-container {
+  background-color: #c4e4e2;
+  border-radius: 15;
+  text-align: center;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.login-input-container {
+  /* border: 1px solid black; */
+  padding: 0px 5px;
+}
+.login-form-container {
+  /* border: 1px solid black; */
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.login-input,
+.login-button {
+  outline: none;
+  background: none;
+  border-radius: 15;
+  border: 1px solid #e3f2fd;
+}
+.login-input {
+}
+.login-button {
+  padding: 3px 10px;
+}
+.login-button:hover {
+  text-decoration: underline;
+}
+.login-input:not(:focus) {
+  font-style: italic;
+}
+::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  /* color: #e3f2fd; */
+}
+::-moz-placeholder {
+  /* Firefox 19+ */
+  /* color: #e3f2fd; */
+}
+:-ms-input-placeholder {
+  /* IE 10+ */
+  /* color: #e3f2fd; */
+}
+:-moz-placeholder {
+  /* Firefox 18- */
+  /* color: #e3f2fd; */
+}
+/*
+
+::-webkit-input-placeholder {
+   font-style: italic;
+}
+:-moz-placeholder {
+   font-style: italic;  
+}
+::-moz-placeholder {
+   font-style: italic;  
+}
+:-ms-input-placeholder {  
+   font-style: italic; 
+}
+*/

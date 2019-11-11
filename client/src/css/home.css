@@ -1,0 +1,31 @@
+.home-container {
+  text-align: center;
+  color: #ffffff;
+  background: rgb(27, 0, 36);
+  background: linear-gradient(
+    0deg,
+    rgba(27, 0, 36, 1) 0%,
+    rgba(133, 17, 105, 1) 48%,
+    rgba(255, 175, 0, 1) 100%
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 600px;
+}
+
+.home-button {
+  outline: none;
+  background: none;
+  border: 1px solid white;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+
+h1 {
+  font-size: 72px;
+  background: -webkit-linear-gradient(#ffffff, #ffffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
