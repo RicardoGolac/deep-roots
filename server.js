@@ -2,6 +2,7 @@ const express = require("express");
 const mongooseSetup = require("./server/config/database");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
+const path = require("path");
 // Authentication imports
 const session = require("express-session");
 const MongoStore = require("connect-mongo")(session);
@@ -9,6 +10,7 @@ const passport = require("passport");
 // List of Routes (name them in plural form)
 const users = require("./server/routes/users");
 const index = require("./server/routes/index");
+const send = require("./server/routes/send");
 // Passport Config
 require("./server/config/passport")(passport);
 
@@ -61,5 +63,16 @@ app.use((req, res, next) => {
 app.use("/", index);
 app.use("/users", users);
 app.use("/associations",associations);
+app.use("/send",send)
+
+// Serve static assests if in production
+if (process.env.NODE_ENV === "production") {
+  // Set static folder
+  app.use(express.static("client/build"));
+
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+  });
+}
 
 app.listen(port, () => console.log(`Server started on port ${port}`));
