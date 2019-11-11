@@ -22,7 +22,6 @@ var myCss = {
   navigationButton: "button btn-lg",
 };
 
-
 //state that reads from database
 //make button to change data in listing and update it
 //make routes
@@ -143,6 +142,7 @@ class SurveyPage extends Component {
  onComplete(survey, options) {
   //Write survey results into database
   console.log("Survey results: " + JSON.stringify(survey.data));
+
  }
  
  render() {
@@ -171,7 +171,7 @@ class SurveyPage extends Component {
         <Survey.Survey
           model={model}
           css={myCss}
-          onComplete={this.onComplete.bind(this)}
+          onComplete={this.onComplete}
           
         />
 

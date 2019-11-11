@@ -13,11 +13,8 @@ import Gallery from "./components/Gallery";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import Dashboard from "./components/Dashboard";
-<<<<<<< HEAD
 import LifeCoaching from "./components/LifeCoaching";
-=======
 import Footer from "./components/Footer";
->>>>>>> b454fe5ff571b8f7cf82b3102e12bc78381d493a
 
 class App extends Component {
   constructor(props) {
