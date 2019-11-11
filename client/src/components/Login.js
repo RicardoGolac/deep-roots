@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { withRouter, Redirect } from "react-router-dom";
+import "../css/login.css";
 
 class Login extends Component {
   constructor(props) {
@@ -67,7 +68,7 @@ class Login extends Component {
       <div className="login-view-container">
         <div className="login-container">
           <div className="login-input-container">
-            <h3>Login User</h3>
+            <h3>Admin Login</h3>
             <br />
           </div>
           {this.state.loginError ? <p>{this.state.loginError}</p> : null}
@@ -102,6 +103,9 @@ class Login extends Component {
             <div className="login-input-container">
               <input type="submit" value="Login" className="login-button" />
             </div>
+            <span class="psw">
+              Forgot <a href="#">password?</a>
+            </span>
           </form>
         </div>
       </div>

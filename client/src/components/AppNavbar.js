@@ -30,12 +30,10 @@ class AppNavBar extends Component {
     };
     return (
       <div>
-        <Navbar color="dark" dark expand="sm" className="mb-5 appnavbar">
+        <Navbar color="dark" dark expand="sm" className="appnavbar">
           <Container>
-            <NavbarBrand>
-              <NavLink tag={Link} to="/">
-                Deep Roots
-              </NavLink>
+            <NavbarBrand tag={Link} to="/">
+              Deep Roots
             </NavbarBrand>
             <NavbarToggler onClick={this.toggle} />
             <Collapse isOpen={this.state.isOpen} navbar>
@@ -49,6 +47,12 @@ class AppNavBar extends Component {
                 <NavItem className="">
                   <NavLink tag={Link} to="/Associations">
                     Associations
+                  </NavLink>
+                </NavItem>
+
+                <NavItem className="">
+                  <NavLink tag={Link} to="/lifecoaching">
+                    Life Coaching
                   </NavLink>
                 </NavItem>
 
@@ -67,11 +71,6 @@ class AppNavBar extends Component {
                   </>
                 ) : (
                   <>
-                    <NavItem>
-                      <NavLink tag={Link} to="/protected">
-                        Protected
-                      </NavLink>
-                    </NavItem>
                     <NavItem>
                       <NavLink tag={Link} to="/dashboard">
                         Dashboard

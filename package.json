@@ -4,13 +4,13 @@
   "description": "MERN Stack web application for Deep Roots",
   "main": "server.js",
   "scripts": {
-    "test": "mocha server/tests",
+    "test": "mocha server/test",
     "client-install": "npm install --prefix client",
-    "start": "node server/server.js",
-    "server": "nodemon server/server.js",
+    "start": "node server.js",
+    "server": "nodemon server.js",
     "client": "npm start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "heroku-postbuild": "NPM_CONFIG_PRODCUTION=false npm install --prefix client && npm run build --prefix client"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
   "author": "Team SixC at UF",
   "license": "MIT",
@@ -29,10 +29,12 @@
     "mocha": "^6.2.2",
     "mongoose": "^5.7.9",
     "morgan": "^1.9.1",
+    "nodemailer": "^6.3.1",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "should": "^13.2.3",
-    "supertest": "^4.0.2"
+    "supertest": "^4.0.2",
+    "surveyjs-react": "^1.0.1"
   },
   "devDependencies": {
     "nodemon": "^1.19.4"

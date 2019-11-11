@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { withRouter, Redirect } from "react-router-dom";
 import axios from "axios";
+import "../css/register.css";
 
 class Register extends Component {
   constructor(props) {
@@ -87,68 +88,70 @@ class Register extends Component {
       );
     }
     return (
-      <div>
-        <h3>Register User</h3>
-        {this.state.registerErrors.length > 0
-          ? this.state.registerErrors.map((errMsg, index) => (
-              <p className="register-error-message" key={index}>
-                {errMsg.msg}
-              </p>
-            ))
-          : null}
-        <form onSubmit={e => this.onSubmit(e)}>
-          <div className="form-group">
-            <label>Username: </label>
-            <input
-              type="text"
-              name="name"
-              required
-              className="form-control"
-              value={this.state.name}
-              onChange={e => this.onChange(e)}
-            />
-          </div>
-          <div className="form-group">
-            <label>Email: </label>
-            <input
-              type="email"
-              name="email"
-              required
-              className="form-control"
-              value={this.state.email}
-              onChange={e => this.onChange(e)}
-            />
-          </div>
-          <div className="form-group">
-            <label>Password: </label>
-            <input
-              type="password"
-              name="password"
-              required
-              className="form-control"
-              value={this.state.password}
-              onChange={e => this.onChange(e)}
-            />
-          </div>
-          <div className="form-group">
-            <label>Confirm Password: </label>
-            <input
-              type="password"
-              name="password2"
-              required
-              className="form-control"
-              value={this.state.password2}
-              onChange={e => this.onChange(e)}
-            />
-          </div>
-          <div className="form-group">
-            <input
-              type="submit"
-              value="Register Now!"
-              className="btn btn-primary"
-            />
-          </div>
-        </form>
+      <div className="register-view-container">
+        <div className="register-container">
+          <h3>Register User</h3>
+          {this.state.registerErrors.length > 0
+            ? this.state.registerErrors.map((errMsg, index) => (
+                <p className="register-error-message" key={index}>
+                  {errMsg.msg}
+                </p>
+              ))
+            : null}
+          <form onSubmit={e => this.onSubmit(e)}>
+            <div className="form-group">
+              <label>Username: </label>
+              <input
+                type="text"
+                name="name"
+                required
+                className="form-control"
+                value={this.state.name}
+                onChange={e => this.onChange(e)}
+              />
+            </div>
+            <div className="form-group">
+              <label>Email: </label>
+              <input
+                type="email"
+                name="email"
+                required
+                className="form-control"
+                value={this.state.email}
+                onChange={e => this.onChange(e)}
+              />
+            </div>
+            <div className="form-group">
+              <label>Password: </label>
+              <input
+                type="password"
+                name="password"
+                required
+                className="form-control"
+                value={this.state.password}
+                onChange={e => this.onChange(e)}
+              />
+            </div>
+            <div className="form-group">
+              <label>Confirm Password: </label>
+              <input
+                type="password"
+                name="password2"
+                required
+                className="form-control"
+                value={this.state.password2}
+                onChange={e => this.onChange(e)}
+              />
+            </div>
+            <div className="form-group">
+              <input
+                type="submit"
+                value="Register"
+                className="btn btn-primary"
+              />
+            </div>
+          </form>
+        </div>
       </div>
     );
   }

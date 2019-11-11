@@ -1,12 +1,14 @@
 import React from "react";
 import { Redirect } from "react-router-dom";
+import "../css/dashboard.css";
+
 const Dashboard = ({ loggedIn, user }) => {
   return (
     <>
       {loggedIn ? (
         <div className="dashboard-view-container">
           <div className="dashboard-container">
-            <h1>Dashboard</h1>
+            <h2>Dashboard</h2>
             <p>Hello, {user.name}!</p>
             <br />
             {Object.keys(user).map((k, index) => (
