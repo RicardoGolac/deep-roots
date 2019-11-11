@@ -24,16 +24,6 @@ app.use(bodyParser.json()); // allows us to deal with form data and json data
 // Connect to Database
 mongooseSetup.start();
 
-// Serve static assests if in production
-if (process.env.NODE_ENV === "production") {
-  // Set static folder
-  app.use(express.static("client/build"));
-
-  app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
-  });
-}
-
 const port = process.env.PORT || 5000;
 
 // Express session middleware
@@ -68,5 +58,15 @@ app.use((req, res, next) => {
 // List All Routes here
 app.use("/", index);
 app.use("/users", users);
+
+// Serve static assests if in production
+if (process.env.NODE_ENV === "production") {
+  // Set static folder
+  app.use(express.static("client/build"));
+
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+  });
+}
 
 app.listen(port, () => console.log(`Server started on port ${port}`));
