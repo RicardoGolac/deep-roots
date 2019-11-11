@@ -1,11 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import "../css/home.css";
 
 const Home = () => {
   return (
-    <div>
-      <p>Home</p>
-      <p>This is the Landing Page for Deep Roots</p>
+    <div className="home-container">
+      <h1>Deep Roots</h1>
     </div>
   );
 };
