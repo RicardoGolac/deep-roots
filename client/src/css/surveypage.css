@@ -18,3 +18,13 @@
 .question {
     margin: 20px;
 }
+.panel-footer {
+    padding: 15px 15px;
+    border: none;
+    text-align: right;
+}
+
+.panel-footer, .card-footer {
+  background-color: #dce9ec;
+  text-align: center;
+}
