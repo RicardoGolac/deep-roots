@@ -10,6 +10,7 @@ const passport = require("passport");
 // List of Routes (name them in plural form)
 const users = require("./server/routes/users");
 const index = require("./server/routes/index");
+const send = require("./server/routes/send");
 // Passport Config
 require("./server/config/passport")(passport);
 
@@ -58,6 +59,7 @@ app.use((req, res, next) => {
 // List All Routes here
 app.use("/", index);
 app.use("/users", users);
+app.use("/send",send)
 
 // Serve static assests if in production
 if (process.env.NODE_ENV === "production") {
