@@ -15,6 +15,7 @@
     "reactstrap": "^8.1.1",
     "redux": "^4.0.4",
     "redux-thunk": "^2.3.0",
+    "surveyjs-react": "^1.0.1",
     "uuid": "^3.3.3"
   },
   "scripts": {
