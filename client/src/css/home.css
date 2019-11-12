@@ -1,4 +1,4 @@
-.home-container {
+.home-view-container {
   text-align: center;
   color: #ffffff;
   background: rgb(233, 210, 123);
@@ -11,6 +11,13 @@
   justify-content: center;
   align-items: center;
   height: 600px;
+}
+
+.home-container {
+  padding-top: 0;
+}
+.home-about {
+  width: 200px;
 }
 
 .home-button {
