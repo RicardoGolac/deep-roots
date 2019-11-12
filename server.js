@@ -14,6 +14,9 @@ const send = require("./server/routes/send");
 // Passport Config
 require("./server/config/passport")(passport);
 
+// Associations
+const associations = require('./server/routes/associations');
+
 // Start express server
 const app = express();
 app.set("trust proxy", true);
@@ -59,6 +62,7 @@ app.use((req, res, next) => {
 // List All Routes here
 app.use("/", index);
 app.use("/users", users);
+app.use("/associations",associations);
 app.use("/send",send)
 
 // Serve static assests if in production
