@@ -1,0 +1,15 @@
+.dashboard-view-container {
+  background-color: #dce9ec;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dashboard-container {
+  background-color: #c4e4e2;
+  width: 500px;
+  margin: 0 auto;
+  padding: 10px;
+  border-radius: 10px;
+}

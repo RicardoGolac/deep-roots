@@ -2,9 +2,9 @@ const express = require("express");
 const router = express.Router();
 
 // Item Model
-const Item = require("../../models/Item");
+const Item = require("../models/Item");
 
-// @route GET api/items
+// @route GET items/
 // @desc  Get All Items
 // @access Public
 router.get("/", (req, res) => {
@@ -13,7 +13,7 @@ router.get("/", (req, res) => {
     .then(items => res.json(items));
 });
 
-// @route POST api/items
+// @route POST items/
 // @desc  Create An Item
 // @access Public
 router.post("/", (req, res) => {
@@ -24,7 +24,7 @@ router.post("/", (req, res) => {
   newItem.save().then(item => res.json(item));
 });
 
-// @route DELETE api/items/:id
+// @route DELETE items/:ids
 // @desc  Delete An Item
 // @access Public
 router.delete("/:id", (req, res) => {

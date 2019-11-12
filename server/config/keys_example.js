@@ -4,5 +4,5 @@
 
 module.exports = {
   //place the URI of your mongo database here.
-  mongoURI: "Insert your mongo Uri here!"
+  mongoURI: "Your uri here!"
 };

@@ -2,18 +2,22 @@
 
 This is a MERN Stack web application that serves as the main website for artist Turbado Marabou.
 
-Team Members:
-Ricardo Golac
-Roberto Pantoja
-Krishan Patel
+### Team Members:
 
-## How to contribute to Deep Roots
+1. Ricardo Golac
+2. Roberto Pantoja
+3. Krishan Patel
+4. Aleksei "Sandro" Witty
+5. Irene Allman
+6. Emily Bauer
+
+## Contributing to Deep Roots
 
 ### Clone the project on to your local machine
 
 1. Navigate to a directory on your local machine to store the project
 2. Clone the repository: 'git clone <clone-link>'
-3. Install the project dependencies: 'npm install' and 'npm client-install'
+3. Install the project dependencies: 'npm install' and 'npm client-install'; you could also cd into client and run 'npm install'
 
 ## Create your own working branch
 
@@ -23,6 +27,7 @@ Krishan Patel
    - Please name your branch something indicative of what feature or change you're working on
 4. Checkout the branch you created: 'git checkout <branch_name>'
 5. Push your new branch to Github: 'git push --set-upstream origin <branch_name>'
+6. You should see that a new branch was added to the repo on GitHub
 
 ### Make Changes
 
@@ -41,8 +46,9 @@ Krishan Patel
 3. Get the most current version of master: 'git pull origin master'
 4. Move over to your branch: 'git checkout <branch_name>'
 5. Merge the master branch into your branch: 'git merge master'
-   - These first few steps ensure that any updates to the master branch work with your changes
+   - These first few steps ensure that any recent updates to the master branch work with the changes you made
 6. If everything is working properly, push your branch to GitHub: 'git push origin <branch_name>'
+   - Else, work on fixing the given merge conflicts
 7. Create a pull request on GitHub: Click 'New pull request'
    - Provide a good description of what changes you made
    - Submit your pull request
