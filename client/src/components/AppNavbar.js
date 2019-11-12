@@ -45,6 +45,12 @@ class AppNavBar extends Component {
                 </NavItem>
 
                 <NavItem className="">
+                  <NavLink tag={Link} to="/courses">
+                    Web Courses
+                  </NavLink>
+                </NavItem>
+
+                <NavItem className="">
                   <NavLink tag={Link} to="/Associations">
                     Associations
                   </NavLink>
