@@ -2,6 +2,7 @@
 
 # dependencies
 node_modules
+# keys.js must be ignored!
 server/config/keys.js
 client/node_modules
 /.pnp
