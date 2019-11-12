@@ -43,13 +43,11 @@ class AppNavBar extends Component {
                     Gallery
                   </NavLink>
                 </NavItem>
-
                 <NavItem className="">
                   <NavLink tag={Link} to="/Associations">
                     Associations
                   </NavLink>
                 </NavItem>
-
                 <NavItem className="">
                   <NavLink tag={Link} to="/lifecoaching">
                     Life Coaching
