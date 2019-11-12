@@ -10,6 +10,7 @@ import AppNavbar from "./components/AppNavbar";
 import AuthenticatedComponent from "./components/AuthenticatedComponent";
 import Home from "./components/Home";
 import Gallery from "./components/Gallery";
+import Associations from "./components/Associations";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import Dashboard from "./components/Dashboard";
@@ -131,6 +132,7 @@ class App extends Component {
             )}
           />
           <Route path="/gallery" render={() => <Gallery />} />
+          <Route path="/Associations" render={() => <Associations />} />
           <Route path="/lifecoaching" component={LifeCoaching} />
           <AuthenticatedComponent verify={this.verify}>
             <Route
