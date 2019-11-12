@@ -1,25 +1,10 @@
-<<<<<<< HEAD
-import React from "react";
-import AppNavbar from "./components/AppNavbar";
-import Workshops from "./components/Workshops";
-=======
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
->>>>>>> 9c37ef5852eaef269fcddd582ba524433fed49e6
 import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
 import history from "./history";
 import "./App.css";
 
-<<<<<<< HEAD
-function App() {
-  return (
-    <div className="App">
-      <AppNavbar />
-      <Workshops />
-    </div>
-  );
-=======
 // Components
 import AppNavbar from "./components/AppNavbar";
 import AuthenticatedComponent from "./components/AuthenticatedComponent";
@@ -169,7 +154,6 @@ class App extends Component {
       </Router>
     );
   }
->>>>>>> 9c37ef5852eaef269fcddd582ba524433fed49e6
 }
 
 export default App;
