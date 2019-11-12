@@ -15,7 +15,7 @@ const send = require("./server/routes/send");
 require("./server/config/passport")(passport);
 
 // Associations
-const associations = require('./server/routes/associations');
+//const associations = require('./server/routes/associations');
 
 // Start express server
 const app = express();
@@ -62,8 +62,8 @@ app.use((req, res, next) => {
 // List All Routes here
 app.use("/", index);
 app.use("/users", users);
-app.use("/associations",associations);
-app.use("/send",send)
+//app.use("/associations", associations);
+app.use("/send", send);
 
 // Serve static assests if in production
 if (process.env.NODE_ENV === "production") {
