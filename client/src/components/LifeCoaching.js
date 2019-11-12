@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import SurveyPage from "./SurveyPage";
 import "../css/lifecoaching.css";
+import axios from "axios";
 
 class LifeCoaching extends Component {
     constructor(props) {
@@ -17,10 +18,32 @@ class LifeCoaching extends Component {
       handleChange(event) {
         this.setState({value: event.target.value});
       }
-    
+      
+      resetForm(){
+        document.getElementById('contact-form').reset();
+    }
+
       handleSubmit(event) {
-        alert('A question was submitted: ' + this.state.value);
         event.preventDefault();
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+        axios({
+            method: "POST", 
+            url:"http://localhost:3000/send/question", 
+            data: {
+                name: name,   
+                email: email,  
+                message: message
+            }
+        }).then((response)=>{
+            if (response.data.msg === 'success'){
+                alert("Message Sent."); 
+                this.resetForm()
+            }else if(response.data.msg === 'fail'){
+                alert("Message failed to send.")
+            }
+        })
       }
       displaySurveyForm = () => {
         this.setState({
@@ -30,7 +53,7 @@ class LifeCoaching extends Component {
     render() {
         if (this.state.displaySurvey) {
         return (
-            <div>
+            <div className="lcview">
                 <div>
                 <p className="lctitle">Creative Life Coaching</p>
                 <p className="lcsubtitle">Taking the Journey Together</p>
@@ -53,7 +76,7 @@ class LifeCoaching extends Component {
         }
         else {
             return (
-                <div>
+                <div className="lcview">
                     <div>
                     <p className="lctitle">Creative Life Coaching</p>
                     <p className="lcsubtitle">Taking the Journey Together</p>
@@ -69,13 +92,24 @@ class LifeCoaching extends Component {
                     </div>
                     </div>
                     <div className="question">
-                        <p>Have a question?</p>
-                        <form onSubmit={this.handleSubmit}>
-                        <label>
-                         Ask Here:
-                        <input type="text" value={this.state.value} onChange={this.handleChange} />
-                        </label>
-                        <input type="submit" value="Submit" />
+                        <p>Have a question? Ask here.</p>
+                        <form id="contact-form" onSubmit={this.handleSubmit.bind(this)} method="POST">
+                        <div className="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" className="form-control" id="name" />
+                        </div>
+                        <div className="form-group">
+                            <label for="exampleInputEmail1">Email address</label>
+                            <input type="email" className="form-control" id="email" aria-describedby="emailHelp" />
+                        </div>
+                        <div className="form-group">
+                            <label for="message">Question</label>
+                            <textarea className="form-control" rows="5" id="message"></textarea>
+                        </div>
+                        <div className="button">
+                        <button className="btn" type="submit">Submit</button>
+                        </div>
+                        
                     </form>
                     </div>
      

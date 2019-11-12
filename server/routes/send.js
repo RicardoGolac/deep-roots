@@ -25,13 +25,37 @@ transport.verify((error, success) => {
 
 router.post('/complete', jsonParser, (req, res) => {
     var message = JSON.stringify(req.body, null, "\t");
-    console.log(JSON.stringify(message));
-    var content = `message: ${message} `
     var mail = {
       from: 'surveybot@dr.com',
       to: 'turbado@dr.com',  
       subject: 'New Life Coaching Survey Filled Out!',
       text: message
+    }
+  
+    transport.sendMail(mail, (err, data) => {
+      if (err) {
+        res.json({
+          msg: 'fail'
+        })
+      } else {
+        res.json({
+          msg: 'success'
+        })
+      }
+    })
+  });
+
+  router.post('/question', bodyParser.text(), (req, res) => {
+    var name = req.body.name
+    var email = req.body.email
+    var message = req.body.message
+    var content = `name: ${name} \n email: ${email} \n message: ${message} `
+
+    var mail = {
+      from: 'surveybot@dr.com',
+      to: 'turbado@dr.com',  
+      subject: 'Someone has a question about life coaching!',
+      text: content
     }
   
     transport.sendMail(mail, (err, data) => {
