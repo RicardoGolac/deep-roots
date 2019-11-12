@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./pageContents.css";
+import "./Workshops.css";
 class pageContents extends Component {
     render() {
         return (
