@@ -30,7 +30,12 @@ class AppNavBar extends Component {
     };
     return (
       <div>
-        <Navbar color="dark" dark expand="sm" className="appnavbar">
+        <Navbar
+          color="rgba(193, 124, 124, 1)"
+          dark
+          expand="sm"
+          className="appnavbar"
+        >
           <Container>
             <NavbarBrand tag={Link} to="/">
               Deep Roots
