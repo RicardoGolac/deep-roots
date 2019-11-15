@@ -48,31 +48,26 @@ class AppNavBar extends Component {
                   Gallery
                 </NavLink>
               </NavItem>
-
               <NavItem className="">
                 <NavLink tag={Link} to="/courses">
                   Web Courses
                 </NavLink>
               </NavItem>
-
               <NavItem className="">
                 <NavLink tag={Link} to="/Associations">
                   Associations
                 </NavLink>
               </NavItem>
-
               <NavItem className="">
                 <NavLink tag={Link} to="/lifecoaching">
                   Life Coaching
                 </NavLink>
               </NavItem>
-
               <NavItem className="">
                 <NavLink tag={Link} to="/Workshops">
                   Workshops
                 </NavLink>
               </NavItem>
-
               {!this.props.loggedIn ? (
                 <>
                   <NavItem>
