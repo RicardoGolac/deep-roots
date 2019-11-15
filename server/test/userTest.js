@@ -13,7 +13,10 @@ user = {
 
 describe("User Schema Unit Tests", function() {
   before(function(done) {
-    mongoose.connect(config.mongoURI, { useNewUrlParser: true });
+    mongoose.connect(config.mongoURI, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true
+    });
     mongoose.set("useCreateIndex", true);
     mongoose.set("useFindAndModify", false);
     done();

@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 // Welcome Page
-router.get("/", (req, res) => {});
+//router.get("/", (req, res) => {});
 
 router.get("/dashboard", (req, res) => {
   if (req.isAuthenticated()) {

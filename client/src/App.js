@@ -16,6 +16,8 @@ import Register from "./components/Register";
 import Dashboard from "./components/Dashboard";
 import LifeCoaching from "./components/LifeCoaching";
 import Footer from "./components/Footer";
+import Workshops from "./components/Workshops";
+import Courses from "./components/Courses";
 
 class App extends Component {
   constructor(props) {
@@ -131,9 +133,11 @@ class App extends Component {
               <Login login={this.login} loggedIn={this.state.loggedIn} />
             )}
           />
+          <Route path="/courses" render={() => <Courses />} />
           <Route path="/gallery" render={() => <Gallery />} />
           <Route path="/Associations" render={() => <Associations />} />
           <Route path="/lifecoaching" component={LifeCoaching} />
+          <Route path="/Workshops" render={() => <Workshops />} />
           <AuthenticatedComponent verify={this.verify}>
             <Route
               path="/dashboard"
