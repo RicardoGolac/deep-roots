@@ -53,6 +53,11 @@ class AppNavBar extends Component {
                     Life Coaching
                   </NavLink>
                 </NavItem>
+                <NavItem className="">
+                  <NavLink tag={Link} to="/Workshops">
+                    Workshops
+                  </NavLink>
+                </NavItem>
                 {!this.props.loggedIn ? (
                   <>
                     <NavItem>
