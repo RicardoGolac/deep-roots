@@ -9,29 +9,18 @@
   );
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 600px;
+  /* align-items: center;
+  height: 600px; */
 }
 
 .home-container {
   padding-top: 0;
 }
+
 .home-about {
-  width: 200px;
+  width: 400px;
 }
 
-.home-button {
-  outline: none;
-  background: none;
-  border: 1px solid white;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 10px;
-}
-
-h1 {
-  font-size: 72px;
-  background: -webkit-linear-gradient(#ffffff, #ffffff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.home-title {
+  padding-top: 200px;
 }
