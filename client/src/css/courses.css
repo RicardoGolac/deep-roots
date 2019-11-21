@@ -1,4 +1,4 @@
-.home-view-container {
+.courses-container {
   text-align: center;
   color: #ffffff;
   background: rgb(233, 210, 123);
@@ -10,14 +10,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 600px;
-}
-
-.home-container {
-  padding-top: 0;
-}
-.home-about {
-  width: 200px;
+  height: 50rem;
 }
 
 .home-button {
@@ -29,9 +22,14 @@
   border-radius: 10px;
 }
 
-h1 {
-  font-size: 72px;
-  background: -webkit-linear-gradient(#ffffff, #ffffff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.course-button {
+  margin-top: 5rem;
 }
+
+/* h2 {
+    font-size: 72px;
+    background: -webkit-linear-gradient(#7CC2C2, #7CC2C2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding-bottom: 2.5rem;
+  } */
