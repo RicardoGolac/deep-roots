@@ -7,12 +7,13 @@ Container {
   border-radius: 0 !important;
   border-bottom: 0;
   margin: 20px 0 0;
+  background-color: rgb(233, 210, 123);
 }
 
 .footer-view-container {
-  background-color: #ffffff;
+  background-color: rgb(233, 210, 123);
 }
 
 .copyright {
-  background-color: #ffffff;
+  background-color: rgb(233, 210, 123);
 }
