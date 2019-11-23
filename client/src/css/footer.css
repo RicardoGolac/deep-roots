@@ -1,19 +1,26 @@
-#content {
+/* #content {
   padding-top: 70px;
   min-height: ~"calc(100vh - 92px)";
-}
+} */
 
-Container {
+/* .footer-container {
   border-radius: 0 !important;
   border-bottom: 0;
   margin: 20px 0 0;
   background-color: rgb(233, 210, 123);
+} */
+
+.footer-container {
+  margin: 0 auto;
 }
 
 .footer-view-container {
   background-color: rgb(233, 210, 123);
+  display: table;
+  width: 100%;
+  margin: 0px 0px 0px 0px;
 }
 
-.copyright {
+/* .copyright {
   background-color: rgb(233, 210, 123);
-}
+} */
