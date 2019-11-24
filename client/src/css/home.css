@@ -9,13 +9,15 @@
   );
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 600px;
+  /* align-items: center; */
+  width: 100%;
+  height: 700px;
 }
 
 .home-container {
   padding-top: 0;
 }
+
 .home-about {
   width: 200px;
 }
