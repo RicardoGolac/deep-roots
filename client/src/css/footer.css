@@ -12,6 +12,8 @@
 
 .footer-container {
   margin: 0 auto;
+  padding-bottom: 10px;
+  color: #000000;
 }
 
 .footer-view-container {
