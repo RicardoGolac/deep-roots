@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "../css/home.css";
+import axios from "axios";
 
 class Home extends Component {
   render() {
