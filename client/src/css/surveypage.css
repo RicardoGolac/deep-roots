@@ -1,30 +1,31 @@
 /* SURVEY */
 
 .SurveyHeader {
-    background-color: #222;
-    height: 80px;
-    padding: 20px;
-    color: white;
-  }
-  .surveyjs {
-      margin: 20px;
-  }
-  .lcinfo {
-      text-align: center
-  }
-  .newspacing {
-      margin: 20px;
-  }
+  background-color: #222;
+  height: 80px;
+  padding: 20px;
+  color: white;
+}
+.surveyjs {
+  margin: 20px;
+}
+.lcinfo {
+  text-align: center;
+}
+.newspacing {
+  margin: 20px;
+}
 .question {
-    margin: 20px;
+  margin: 20px;
 }
 .panel-footer {
-    padding: 15px 15px;
-    border: none;
-    text-align: right;
+  padding: 15px 15px;
+  border: none;
+  text-align: right;
 }
 
-.panel-footer, .card-footer {
+.panel-footer,
+.card-footer {
   background-color: #dce9ec;
   text-align: center;
 }

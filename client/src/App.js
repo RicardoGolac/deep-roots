@@ -17,7 +17,7 @@ import Dashboard from "./components/Dashboard";
 import LifeCoaching from "./components/LifeCoaching";
 import Footer from "./components/Footer";
 import Workshops from "./components/Workshops";
-import Courses from "./components/Courses"
+import Courses from "./components/Courses";
 
 class App extends Component {
   constructor(props) {
