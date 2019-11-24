@@ -9,13 +9,26 @@
   );
   display: flex;
   justify-content: center;
+<<<<<<< HEAD
   /* align-items: center;
   height: 600px; */
+=======
+  /* align-items: center; */
+  width: 100%;
+  height: 700px;
+>>>>>>> e34a89ba4c910f1798e52b45c7dec420f4def823
 }
 
 .home-container {
   padding-top: 0;
 }
+<<<<<<< HEAD
+=======
+
+.home-about {
+  width: 200px;
+}
+>>>>>>> e34a89ba4c910f1798e52b45c7dec420f4def823
 
 .home-about {
   width: 400px;
