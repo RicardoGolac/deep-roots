@@ -1,4 +1,7 @@
 import React, { Component } from "react";
+import LCCard from "./LCCard";
+import RatesCard from "./RatesCard";
+import MoreCard from "./MoreCard";
 import SurveyPage from "./SurveyPage";
 import "../css/lifecoaching.css";
 import axios from "axios";
@@ -59,13 +62,15 @@ class LifeCoaching extends Component {
                 <p className="lcsubtitle">Taking the Journey Together</p>
                 </div>
                 <div className="lcinfo">
-                <p>Life coaching about section</p>
-                <p>Life coaching rates section</p>
-                <p>Typically limited to 2 months</p>
+                    <LCCard></LCCard>
+                    <div class="row">
+                        <div class="col-sm-6"><RatesCard></RatesCard></div>
+                        <div class="col-sm-6"><MoreCard></MoreCard></div>
+                    </div>
                 </div>
                 <div className="button">
-                <button className="btn" onClick={this.displaySurveyForm}>
-                    Click to fill out a survey which personalizes the session to you!
+                <button className="lcbtn" onClick={this.displaySurveyForm}>
+                Turbado is a renaissance man, who engages in many aspects of the arts. In the formal world of visual arts, Turbado is a master printmaker, painter and muralist. 
                 </button>
                 </div>
                 <div>
@@ -82,12 +87,14 @@ class LifeCoaching extends Component {
                     <p className="lcsubtitle">Taking the Journey Together</p>
                     </div>
                     <div className="lcinfo">
-                    <p>Life coaching about section</p>
-                    <p>Life coaching rates section</p>
-                    <p>Typically limited to 2 months</p>
+                    <LCCard></LCCard>
+                    <div class="row">
+                        <div class="col-sm-6"><RatesCard></RatesCard></div>
+                        <div class="col-sm-6"><MoreCard></MoreCard></div>
+                    </div>
                     <div className="button">
-                    <button className="btn" onClick={this.displaySurveyForm}>
-                        Click to fill out a survey which personalizes the session to you!
+                    <button className="lcbtn" onClick={this.displaySurveyForm}>
+                    Click to fill out survey!
                     </button>
                     </div>
                     </div>
@@ -107,7 +114,7 @@ class LifeCoaching extends Component {
                             <textarea className="form-control" rows="5" id="message"></textarea>
                         </div>
                         <div className="button">
-                        <button className="btn" type="submit">Submit</button>
+                        <button className="lcbtn" type="submit">Submit</button>
                         </div>
                         
                     </form>
