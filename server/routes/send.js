@@ -6,13 +6,12 @@ var jsonParser = bodyParser.json();
 //const creds = require('../config/mailer'); set up for real email
 
 var transport = nodemailer.createTransport({
-    host: "smtp.mailtrap.io",
-    port: 2525,
-    auth: {
-      user: "1888a41eca5f5a",
-      pass: "c8cfc8bab2bb69"
-    }
-  });
+  service: 'gmail',
+  auth: {
+         user: 'deeprootssurveybot@gmail.com',
+         pass: 'drsb2019'
+     }
+ });
 
 transport.verify((error, success) => {
   if (error) {
@@ -26,8 +25,8 @@ transport.verify((error, success) => {
 router.post('/complete', jsonParser, (req, res) => {
     var message = JSON.stringify(req.body, null, "\t");
     var mail = {
-      from: 'surveybot@dr.com',
-      to: 'turbado@dr.com',  
+      from: 'deeprootssurveybot@gmail.com',
+      to: 'emmit.bauer@gmail.com',  
       subject: 'New Life Coaching Survey Filled Out!',
       text: message
     }

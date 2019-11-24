@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import LCCard from "./LCCard";
-import RatesCard from "./RatesCard";
-import MoreCard from "./MoreCard";
+import LCInfo from "./LCInfo";
 import SurveyPage from "./SurveyPage";
 import "../css/lifecoaching.css";
 import axios from "axios";
@@ -62,15 +61,14 @@ class LifeCoaching extends Component {
                 <p className="lcsubtitle">Taking the Journey Together</p>
                 </div>
                 <div className="lcinfo">
-                    <LCCard></LCCard>
-                    <div class="row">
-                        <div class="col-sm-6"><RatesCard></RatesCard></div>
-                        <div class="col-sm-6"><MoreCard></MoreCard></div>
+                <div class="row">
+                        <div class="col-sm-6"><LCCard></LCCard></div>
+                        <div class="col-sm-6"><LCInfo></LCInfo></div>
                     </div>
                 </div>
                 <div className="button">
                 <button className="lcbtn" onClick={this.displaySurveyForm}>
-                Turbado is a renaissance man, who engages in many aspects of the arts. In the formal world of visual arts, Turbado is a master printmaker, painter and muralist. 
+                Click to ask a question
                 </button>
                 </div>
                 <div>
@@ -87,10 +85,10 @@ class LifeCoaching extends Component {
                     <p className="lcsubtitle">Taking the Journey Together</p>
                     </div>
                     <div className="lcinfo">
-                    <LCCard></LCCard>
+                    
                     <div class="row">
-                        <div class="col-sm-6"><RatesCard></RatesCard></div>
-                        <div class="col-sm-6"><MoreCard></MoreCard></div>
+                        <div class="col-sm-6"><LCCard></LCCard></div>
+                        <div class="col-sm-6"><LCInfo></LCInfo></div>
                     </div>
                     <div className="button">
                     <button className="lcbtn" onClick={this.displaySurveyForm}>
