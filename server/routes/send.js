@@ -48,11 +48,11 @@ router.post('/complete', jsonParser, (req, res) => {
     var name = req.body.name
     var email = req.body.email
     var message = req.body.message
-    var content = `name: ${name} \n email: ${email} \n message: ${message} `
+    var content = `name: ${name} \n email: ${email} \n question: ${message} `
 
     var mail = {
-      from: 'surveybot@dr.com',
-      to: 'turbado@dr.com',  
+      from: 'deeprootssurveybot@gmail.com',
+      to: 'emmit.bauer@gmail.com',  
       subject: 'Someone has a question about life coaching!',
       text: content
     }
