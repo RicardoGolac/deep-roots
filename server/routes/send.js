@@ -3,13 +3,13 @@ const router = express.Router();
 var nodemailer = require('nodemailer');
 var bodyParser = require('body-parser');
 var jsonParser = bodyParser.json();
-//const creds = require('../config/mailer'); set up for real email
+const creds = require('../config/mailer'); 
 
 var transport = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-         user: 'deeprootssurveybot@gmail.com',
-         pass: 'drsb2019'
+         user: creds.USER,
+         pass: creds.PASS
      }
  });
 
