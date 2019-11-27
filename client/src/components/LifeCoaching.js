@@ -26,30 +26,55 @@ class LifeCoaching extends Component {
             infoText: 'Creative life coaching is a personalized service to help you evolve yourself and your creative mind. These services last for up to two months. They are personalized to you and your needs.',
             benefits: 'Our Ancestors teach us that the beauty of life is working in tandem with the grand plan of creation. The courage of an Artist is being able to capture these aspects in their work to retain that, which is meaningful to us as human beings. To stay to one’s purpose and calling can be the most challenging task and the richest reward. Creative life coaching can help you do just that.',
             rates: 'Life coaching is paid on a per miniute basis. The current rate is 1 dollar per minute.',
-            howTo: 'If you are interested, please fill out the survey by clicking on the button below. Turbado will respond via email as soon as possible.'
+            howTo: 'If you are interested, please fill out the survey by clicking on the button below. Turbado will respond via email as soon as possible.',
+            newText: '',
+            newRates: '',
+            newBen: '',
+            newHowTo: ''
             
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
       }
+      updateText = (value) => {
+          console.log(value);
+          this.setState({
+              newText: value
+          })
+      }
+      updateRates = (value) => {
+        this.setState({
+            newRates: value
+        })
+    }
+    updateBen = (value) => {
+        this.setState({
+            newBen: value
+        })
+    }
+    updateHowTo = (value) => {
+        this.setState({
+            newHowTo: value
+        })
+    }
       editText = () => {
         this.setState({
-            infoText: 'henlo'
+            infoText: this.state.newText
         })
     } //fix this obvs
     editRates = () => {
         this.setState({
-            rates: 'henlo'
+            rates: this.state.newRates
         })
     } //fix this obvs
     editBenefits = () => {
         this.setState({
-            benefits: 'henlo'
+            benefits: this.state.newBen
         })
     } //fix this obvs
     editHowTo = () => {
         this.setState({
-            howTo: 'henlo'
+            howTo: this.state.newHowTo
         })
     } //fix this obvs
       handleChange(event) {
@@ -98,15 +123,13 @@ class LifeCoaching extends Component {
                 </div>
                 <div className="lcinfo">
                 <div class="row">
-                        <div class="col-sm-6"><LCCard></LCCard></div>
-                        <div class="col-sm-6"><LCInfo loggedIn={this.state.loggedIn}
-                        benefits={this.state.benefits}
-                        rates={this.state.rates}
-                        howTo={this.state.howTo}
-                        editBenefits={this.editBenefits.bind(this)}
-                        editRates={this.editRates.bind(this)}
-                        editHowTo={this.editHowTo.bind(this)}
-                        ></LCInfo></div>
+                        <div class="col-sm-6"><LCCard
+                        loggedIn={this.state.loggedIn}
+                        infoText={this.state.infoText}
+                        editText={this.editText.bind(this)}
+                        updateText={this.updateText.bind(this)}
+                        ></LCCard></div>
+                        <div class="col-sm-6"><LCInfo></LCInfo></div>
                     </div>
                 </div>
                 <div className="button">
@@ -130,15 +153,13 @@ class LifeCoaching extends Component {
                     <div className="lcinfo">
                     
                     <div class="row">
-                        <div class="col-sm-6"><LCCard></LCCard></div>
-                        <div class="col-sm-6"><LCInfo loggedIn={this.state.loggedIn}
-                        benefits={this.state.benefits}
-                        rates={this.state.rates}
-                        howTo={this.state.howTo}
-                        editBenefits={this.editBenefits.bind(this)}
-                        editRates={this.editRates.bind(this)}
-                        editHowTo={this.editHowTo.bind(this)}
-                        ></LCInfo></div>
+                        <div class="col-sm-6"><LCCard
+                        loggedIn={this.state.loggedIn}
+                        infoText={this.state.infoText}
+                        editText={this.editText.bind(this)}
+                        updateText={this.updateText.bind(this)}
+                        ></LCCard></div>
+                        <div class="col-sm-6"><LCInfo></LCInfo></div>
                     </div>
                     <div className="button">
                     <button className="lcbtn" onClick={this.displaySurveyForm}>
@@ -185,13 +206,12 @@ class LifeCoaching extends Component {
                     <div className="lcinfo">
                     <div class="row">
                             <div class="col-sm-6">
-                            <Card>
-                                <CardImg top width="100%" src={require("./photos/clc.jpg")} alt="clc image" />
-                                <CardBody>
-                                <CardText>{this.state.infoText}</CardText>
-                                <Button onClick={this.editText} >Edit</Button>
-                                </CardBody>
-                            </Card>
+                            <LCCard
+                            loggedIn={this.state.loggedIn}
+                            infoText={this.state.infoText}
+                            editText={this.editText.bind(this)}
+                            updateText={this.updateText.bind(this)}
+                            ></LCCard>
                             </div>
                             <div class="col-sm-6"><LCInfo loggedIn={this.state.loggedIn}
                             benefits={this.state.benefits}
@@ -200,6 +220,9 @@ class LifeCoaching extends Component {
                             editBenefits={this.editBenefits.bind(this)}
                             editRates={this.editRates.bind(this)}
                             editHowTo={this.editHowTo.bind(this)}
+                            updateRates={this.updateRates.bind(this)}
+                            updateBen={this.updateBen.bind(this)}
+                            updateHowTo={this.updateHowTo.bind(this)}
                             ></LCInfo></div>
                         </div>
                     </div>
@@ -224,14 +247,13 @@ class LifeCoaching extends Component {
                         <div className="lcinfo">
                         
                         <div class="row">
-                            <div class="col-sm-6">
-                            <Card>
-                                <CardImg top width="100%" src={require("./photos/clc.jpg")} alt="clc image" />
-                                <CardBody>
-                                <CardText>{this.state.infoText}</CardText>
-                                <Button onClick={this.editText} >Edit</Button>
-                                </CardBody>
-                            </Card>
+                        <div class="col-sm-6">
+                            <LCCard
+                            loggedIn={this.state.loggedIn}
+                            infoText={this.state.infoText}
+                            editText={this.editText.bind(this)}
+                            updateText={this.updateText.bind(this)}
+                            ></LCCard>
                             </div>
                             <div class="col-sm-6"><LCInfo  loggedIn={this.state.loggedIn}
                             benefits={this.state.benefits}
@@ -240,6 +262,9 @@ class LifeCoaching extends Component {
                             editBenefits={this.editBenefits.bind(this)}
                             editRates={this.editRates.bind(this)}
                             editHowTo={this.editHowTo.bind(this)}
+                            updateRates={this.updateRates.bind(this)}
+                            updateBen={this.updateBen.bind(this)}
+                            updateHowTo={this.updateHowTo.bind(this)}
                             ></LCInfo></div>
                         </div>
                         <div className="button">

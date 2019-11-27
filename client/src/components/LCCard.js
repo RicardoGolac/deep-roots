@@ -5,17 +5,46 @@ import {
 } from 'reactstrap';
 
 
+
 const LCCard = (props) => {
-  return (
-    <div>
+  var newText;
+  function updateText() {
+    const v = newText.value;
+    props.updateText(v)
+  }
+
+  if (!props.loggedIn) {
+    return (
+      <div>
+        <Card>
+          <CardImg top width="100%" src={require("./photos/clc.jpg")} alt="clc image" />
+          <CardBody>
+            <CardText>{props.infoText}</CardText>
+          </CardBody>
+        </Card>
+      </div>
+    );
+  }
+  else {
+    return (
       <Card>
-        <CardImg top width="100%" src={require("./photos/clc.jpg")} alt="clc image" />
-        <CardBody>
-          <CardText>Creative life coaching is a personalized service to help you evolve yourself and your creative mind. These services last for up to two months. They are personalized to you and your needs.</CardText>
-        </CardBody>
-      </Card>
-    </div>
-  );
+      <CardImg top width="100%" src={require("./photos/clc.jpg")} alt="clc image" />
+      <CardBody>
+      <CardText>{props.infoText}</CardText>
+      <form>
+          <input
+          type="text"
+          placeholder="New Description"
+          ref={ (input) => newText = input }
+          onChange={updateText.bind(this)}
+          ></input>
+      </form>
+      <Button onClick={() => props.editText()}>Edit</Button>
+      </CardBody>
+  </Card>
+    );
+
+  }
 };
 
 export default LCCard;

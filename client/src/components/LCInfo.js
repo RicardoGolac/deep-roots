@@ -4,6 +4,21 @@ import classnames from 'classnames';
 
 const LCInfo = (props) => {
 
+  var newRates;
+  function updateRates() {
+    const v = newRates.value;
+    props.updateRates(v)
+  }
+  var newBen;
+  function updateBen() {
+    const v = newBen.value;
+    props.updateBen(v)
+  }
+  var newHowTo;
+  function updateHowTo() {
+    const v = newHowTo.value;
+    props.updateHowTo(v)
+  }
 
   const [activeTab, setActiveTab] = useState('1');
 
@@ -47,6 +62,14 @@ const LCInfo = (props) => {
                 <h4>{props.rates}</h4>
               </Col>
             </Row>
+            <form>
+                <input
+                type="text"
+                placeholder="New Description"
+                ref={ (input) => newRates = input }
+                onChange={updateRates.bind(this)}
+                ></input>
+            </form>
             <Button onClick={props.editRates}>Edit</Button>
           </TabPane>
           <TabPane tabId="3">
@@ -55,6 +78,14 @@ const LCInfo = (props) => {
                   <h4>{props.howTo}</h4>
                   </Col>
               </Row>
+              <form>
+                  <input
+                  type="text"
+                  placeholder="New Description"
+                  ref={ (input) => newHowTo = input }
+                  onChange={updateHowTo.bind(this)}
+                  ></input>
+              </form>
               <Button onClick={props.editHowTo}>Edit</Button>
           </TabPane>
           <TabPane tabId="1">
@@ -63,6 +94,14 @@ const LCInfo = (props) => {
                   <h4>{props.benefits}</h4>
                   </Col>
               </Row>
+              <form>
+                  <input
+                  type="text"
+                  placeholder="New Description"
+                  ref={ (input) => newBen = input }
+                  onChange={updateBen.bind(this)}
+                  ></input>
+              </form>
               <Button onClick={props.editBenefits}>Edit</Button>
           </TabPane>
         </TabContent>
