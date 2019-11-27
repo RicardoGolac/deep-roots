@@ -5,7 +5,7 @@
     rgba(233, 210, 123, 1) 0%,
     rgba(193, 124, 124, 1) 100%
   );
-
+  padding-bottom: 20px;
 }
 .lcinfo {
   text-align: center;

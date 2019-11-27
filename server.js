@@ -11,6 +11,7 @@ const passport = require("passport");
 const users = require("./server/routes/users");
 const index = require("./server/routes/index");
 const send = require("./server/routes/send");
+const editLC = require("./server/routes/editLC");
 // Passport Config
 require("./server/config/passport")(passport);
 
@@ -64,6 +65,7 @@ app.use("/", index);
 app.use("/users", users);
 //app.use("/associations", associations);
 app.use("/send", send);
+app.use("editLC", editLC);
 
 // Serve static assests if in production
 if (process.env.NODE_ENV === "production") {

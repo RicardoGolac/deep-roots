@@ -3,19 +3,11 @@ const Schema = mongoose.Schema;
 
 // Create Schema
 const LCSchema = new Schema ({
-    name: {
-        type: String,
-        required: true
-      },
-      rate: {
-        type: String,
-        required: true
-      },
-      about: {
-        type: String,
-        required: true
-      },
-      length: {
+    id : {
+      type: Number,
+      required: true
+    },
+    text: {
         type: String,
         required: true
       }
