@@ -8,9 +8,10 @@ const session = require("express-session");
 const MongoStore = require("connect-mongo")(session);
 const passport = require("passport");
 // List of Routes (name them in plural form)
-const users = require("./server/routes/users");
-const index = require("./server/routes/index");
-const send = require("./server/routes/send");
+const users = require("./server/routes/users"),
+  index = require("./server/routes/index"),
+  send = require("./server/routes/send"),
+  fileRoutes = require("./server/routes/file-upload");
 // Passport Config
 require("./server/config/passport")(passport);
 
@@ -61,6 +62,7 @@ app.use((req, res, next) => {
 // Use Routes
 // List All Routes here
 app.use("/", index);
+app.use("/images", fileRoutes);
 app.use("/users", users);
 //app.use("/associations", associations);
 app.use("/send", send);
