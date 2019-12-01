@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { Router, Route, Switch } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
 import history from "./history";
@@ -9,6 +9,7 @@ import "./App.css";
 import AppNavbar from "./components/AppNavbar";
 import AuthenticatedComponent from "./components/AuthenticatedComponent";
 import Home from "./components/Home";
+import EditHome from "./components/EditHome";
 import Gallery from "./components/Gallery";
 import Associations from "./components/Associations";
 import Login from "./components/Login";
@@ -125,7 +126,12 @@ class App extends Component {
           logout={this.logout}
         />
         <Switch>
-          <Route path="/" exact component={Home} />
+          <Route
+            path="/"
+            exact
+            render={() => <Home loggedIn={this.state.loggedIn} />}
+          />
+          <Route path="/update/:id" component={EditHome} />
           <Route path="/users/register" component={Register} />
           <Route
             path="/users/login"

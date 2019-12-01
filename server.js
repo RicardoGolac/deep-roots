@@ -12,6 +12,8 @@ const passport = require("passport");
 const users = require("./server/routes/users");
 const index = require("./server/routes/index");
 const send = require("./server/routes/send");
+const home = require("./server/routes/home");
+const item = require("./server/routes/items");
 
 // Passport Config
 require("./server/config/passport")(passport);
@@ -20,8 +22,19 @@ require("./server/config/passport")(passport);
 const app = express();
 app.set("trust proxy", true);
 
-// CORS
-app.use(cors());
+// CORS CONFIG
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+  );
+  if (req.method === "OPTIONS") {
+    res.header("Access-Control-Allow-Methods", "PUT, POST, PATCH, DELETE, GET");
+    return res.status(200).json({});
+  }
+  next();
+});
 
 // Bodyparser Middleware
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -62,10 +75,12 @@ app.use((req, res, next) => {
 
 // Use Routes
 // List All Routes here
-app.use("/", index);
+//app.use("/", index);
+app.use("/", home);
 app.use("/users", users);
 //app.use("/associations", associations);
 app.use("/send", send);
+app.use("/items", item);
 
 // Serve static assests if in production
 if (process.env.NODE_ENV === "production") {

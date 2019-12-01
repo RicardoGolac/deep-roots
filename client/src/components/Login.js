@@ -104,7 +104,7 @@ class Login extends Component {
               <input type="submit" value="Login" className="login-button" />
             </div>
             <span class="psw">
-              Forgot <a href="#">password?</a>
+              Forgot <a href="www.google.com">password?</a>
             </span>
           </form>
         </div>
