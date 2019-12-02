@@ -6,7 +6,6 @@ const Image = require("../models/ImageSchema");
 // GET all gallery images
 router.get("/", (req, res) => {
   Image.find()
-    .sort({ date: -1 })
     .then(images => res.json(images))
     .catch(err => res.status(400).json("Error: " + err));
 });
@@ -18,7 +17,7 @@ router.post("/add", (req, res) => {
     // make sure to assign all parts of it to the properties of our schema
     name: req.body.name,
     message: req.body.message,
-    imageLink: req.body.imageLink,
+    link: req.body.link,
     description: req.body.description,
     price: req.body.price
   });
@@ -34,7 +33,7 @@ router.post("/update/:id", (req, res) => {
     .then(image => {
       image.name = req.body.name;
       image.message = req.body.message;
-      image.imageLink = req.body.imageLink;
+      image.link = req.body.link;
       image.description = req.body.description;
       image.price = req.body.price;
 

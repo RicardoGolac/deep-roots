@@ -11,7 +11,7 @@ const ImageSchema = new Schema({
     type: String,
     default: "none"
   },
-  imageLink: {
+  link: {
     type: String,
     default: ""
   },
@@ -29,4 +29,4 @@ const ImageSchema = new Schema({
   }
 });
 
-module.exports = Image = mongoose.model("item", ImageSchema);
+module.exports = Image = mongoose.model("image", ImageSchema);

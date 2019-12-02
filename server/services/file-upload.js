@@ -12,6 +12,7 @@ aws.config.update({
 
 const s3 = new aws.S3();
 
+// Optional
 const fileFilter = (req, file, cb) => {
   if (file.mimetype === "image/jpeg" || file.mimetype === "image/png") {
     cb(null, true);
@@ -21,7 +22,6 @@ const fileFilter = (req, file, cb) => {
 };
 
 const upload = multer({
-  fileFilter: fileFilter,
   storage: multerS3({
     s3: s3,
     bucket: "deep-roots-images",
