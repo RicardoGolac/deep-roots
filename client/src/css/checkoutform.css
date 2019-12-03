@@ -1,0 +1,13 @@
+.mybut {
+    margin-top: 2em;
+    margin-bottom: 2em;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+  }
+  
+  .mybut:hover {
+    margin-top: 2em;
+    margin-bottom: 2em;
+    background-color: #4CAF50; /* Green */
+    color: white;
+  }
