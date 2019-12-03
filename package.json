@@ -40,7 +40,9 @@
     "passport-local": "^1.0.0",
     "react-router-dom": "^5.1.2",
     "react-social-icons": "^4.1.0",
+    "react-stripe-elements": "^6.0.1",
     "should": "^13.2.3",
+    "stripe": "^7.14.0",
     "supertest": "^4.0.2",
     "surveyjs-react": "^1.0.1"
   },
