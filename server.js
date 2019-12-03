@@ -16,6 +16,7 @@ const fileRoutes = require("./server/routes/file-upload");
 const gallery = require("./server/routes/gallery");
 const home = require("./server/routes/home");
 const item = require("./server/routes/items");
+const workshops = require("./server/routes/workshops");
 
 // Passport Config
 require("./server/config/passport")(passport);
@@ -81,11 +82,13 @@ app.use("/", index);
 app.use("/images", fileRoutes);
 app.use("/gallery", gallery);
 //app.use("/", index);
+app.use("/workshops", workshops);
 app.use("/", home);
 app.use("/users", users);
 //app.use("/associations", associations);
 app.use("/send", send);
 app.use("/items", item);
+
 
 // Serve static assests if in production
 if (process.env.NODE_ENV === "production") {
