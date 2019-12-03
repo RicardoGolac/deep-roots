@@ -2,7 +2,8 @@ var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
 var AssociationSchema = new Schema({
-  name: {type: String, required: true}
+  name: {type: String, default: "Unnamed", required: true},
+  link: {type: String, default: ""}
 });
 
 AssociationSchema.pre('save', function(next) {
