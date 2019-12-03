@@ -14,6 +14,7 @@ const index = require("./server/routes/index");
 const send = require("./server/routes/send");
 const home = require("./server/routes/home");
 const item = require("./server/routes/items");
+const workshops = require("./server/routes/workshops");
 
 // Passport Config
 require("./server/config/passport")(passport);
@@ -81,6 +82,7 @@ app.use("/users", users);
 //app.use("/associations", associations);
 app.use("/send", send);
 app.use("/items", item);
+app.use("/Workshops", workshops);
 
 // Serve static assests if in production
 if (process.env.NODE_ENV === "production") {

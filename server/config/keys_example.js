@@ -3,6 +3,5 @@
 //copy this file's contents to another file 'keys.js' and store your MongoLab uri there
 
 module.exports = {
-  //place the URI of your mongo database here.
-  mongoURI: "Your uri here!"
+  mongoURI: "mongodb+srv://admin:<password>@robertoscluster-njldn.mongodb.net/test?retryWrites=true&w=majority"
 };
