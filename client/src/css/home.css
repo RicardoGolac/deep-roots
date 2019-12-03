@@ -11,7 +11,8 @@
   justify-content: center;
   /* align-items: center; */
   width: 100%;
-  height: 700px;
+  height: 100%px;
+  min-height: 700px;
 }
 
 .home-container {
