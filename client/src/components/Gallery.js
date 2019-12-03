@@ -20,15 +20,19 @@ const Image = props => (
         <CardSubtitle>{props.image.message}</CardSubtitle>
         <CardText>{props.image.description}</CardText>
         <CardText>${props.image.price}</CardText>
-        <Link to={"gallery/update/" + props.image._id}>Edit</Link> |{" "}
-        <a
-          href="#"
-          onClick={() => {
-            props.deleteImage(props.image._id);
-          }}
-        >
-          Delete
-        </a>
+        {props.loggedIn && (
+          <>
+            <Link to={"gallery/update/" + props.image._id}>Edit</Link> |{" "}
+            <a
+              href="#"
+              onClick={() => {
+                props.deleteImage(props.image._id);
+              }}
+            >
+              Delete
+            </a>
+          </>
+        )}
       </CardBody>
     </Card>
   </div>
