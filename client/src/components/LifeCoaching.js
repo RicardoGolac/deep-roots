@@ -22,15 +22,14 @@ class LifeCoaching extends Component {
         {
             value: '',
             displaySurveyForm: false,
-            loggedIn: true, //not a state, a prop
-            infoText: 'Creative life coaching is a personalized service to help you evolve yourself and your creative mind. These services last for up to two months. They are personalized to you and your needs.',
-            benefits: 'Our Ancestors teach us that the beauty of life is working in tandem with the grand plan of creation. The courage of an Artist is being able to capture these aspects in their work to retain that, which is meaningful to us as human beings. To stay to one’s purpose and calling can be the most challenging task and the richest reward. Creative life coaching can help you do just that.',
-            rates: 'Life coaching is paid on a per miniute basis. The current rate is 1 dollar per minute.',
-            howTo: 'If you are interested, please fill out the survey by clicking on the button below. Turbado will respond via email as soon as possible.',
+            infoText: [], 
+            rates: [],
+            howTo: [],
+            benefits: [],
             newText: '',
             newRates: '',
             newBen: '',
-            newHowTo: ''
+            newHowTo: '',
             
         };
         this.handleChange = this.handleChange.bind(this);
@@ -58,31 +57,116 @@ class LifeCoaching extends Component {
         })
     }
       editText = () => {
-        this.setState({
-            infoText: this.state.newText
+        const newt = {
+            id : 0,
+            text: this.state.newText
+        };
+        axios
+        .post("http://localhost:5000/editLC/edit/0", newt)
+        .then(response => {
+            console.log(newt);
         })
-    } //fix this obvs
-    editRates = () => {
-        this.setState({
-            rates: this.state.newRates
+        .catch(error => {
+            console.log(error);
+        });
+    } 
+    editRates = (e) => {
+        e.preventDefault();
+        const newt = {
+            id : 1,
+            text: this.state.newRates
+        };
+        axios
+        .post("http://localhost:5000/editLC/edit/1", newt)
+        .then(response => {
+            console.log(newt);
         })
-    } //fix this obvs
-    editBenefits = () => {
-        this.setState({
-            benefits: this.state.newBen
+        .catch(error => {
+            console.log(error);
+        });
+    } 
+    editBenefits = (e) => {
+        e.preventDefault();
+        const newt = {
+            id : 2,
+            text: this.state.newBen
+        };
+        axios
+        .post("http://localhost:5000/editLC/edit/2", newt)
+        .then(response => {
+            console.log(newt);
         })
-    } //fix this obvs
-    editHowTo = () => {
-        this.setState({
-            howTo: this.state.newHowTo
+        .catch(error => {
+            console.log(error);
+        });
+    } 
+    editHowTo = (e) => {
+        e.preventDefault();
+        const newt = {
+            id : 3,
+            text: this.state.newHowTo
+        };
+        axios
+        .post("http://localhost:5000/editLC/edit/3", newt)
+        .then(response => {
+            console.log(newt);
         })
-    } //fix this obvs
+        .catch(error => {
+            console.log(error);
+        });
+    }
       handleChange(event) {
         this.setState({value: event.target.value});
       }
       
       resetForm(){
         document.getElementById('contact-form').reset();
+    }
+    componentDidMount() {
+        axios
+        .get("http://localhost:5000/editLC/display/0")
+        .then(response => {
+            const data = response.data;
+            var txt = JSON.stringify(data.text);
+            this.setState({infoText : txt})
+            console.log(txt);
+        })
+        .catch(error => {
+            console.log(error);
+        });
+        axios
+        .get("http://localhost:5000/editLC/display/1")
+        .then(response => {
+            const data = response.data;
+            var txt = JSON.stringify(data.text);
+            this.setState({rates : txt})
+            console.log(data);
+        })
+        .catch(error => {
+            console.log(error);
+        });
+        axios
+        .get("http://localhost:5000/editLC/display/2")
+        .then(response => {
+            const data = response.data;
+            var txt = JSON.stringify(data.text);
+            this.setState({benefits : txt})
+            console.log(data);
+        })
+        .catch(error => {
+            console.log(error);
+        });
+        axios
+        .get("http://localhost:5000/editLC/display/3")
+        .then(response => {
+            const data = response.data;
+            var txt = JSON.stringify(data.text);
+            this.setState({howTo : txt})
+            console.log(data);
+        })
+        .catch(error => {
+            console.log(error);
+        });
     }
 
       handleSubmit(event) {
@@ -113,7 +197,7 @@ class LifeCoaching extends Component {
         })
     }
     render() {
-        if (!this.state.loggedIn) { //not a state,a prop
+        if (!this.props.loggedIn) { //not a state,a prop
         if (this.state.displaySurvey) {
         return (
             <div className="lcview">
@@ -124,12 +208,16 @@ class LifeCoaching extends Component {
                 <div className="lcinfo">
                 <div class="row">
                         <div class="col-sm-6"><LCCard
-                        loggedIn={this.state.loggedIn}
+                        loggedIn={this.props.loggedIn}
                         infoText={this.state.infoText}
                         editText={this.editText.bind(this)}
                         updateText={this.updateText.bind(this)}
                         ></LCCard></div>
-                        <div class="col-sm-6"><LCInfo></LCInfo></div>
+                        <div class="col-sm-6"><LCInfo
+                        benefits={this.state.benefits}
+                        rates={this.state.rates}
+                        howTo={this.state.howTo}
+                        ></LCInfo></div>
                     </div>
                 </div>
                 <div className="button">
@@ -154,12 +242,16 @@ class LifeCoaching extends Component {
                     
                     <div class="row">
                         <div class="col-sm-6"><LCCard
-                        loggedIn={this.state.loggedIn}
+                        loggedIn={this.props.loggedIn}
                         infoText={this.state.infoText}
                         editText={this.editText.bind(this)}
                         updateText={this.updateText.bind(this)}
                         ></LCCard></div>
-                        <div class="col-sm-6"><LCInfo></LCInfo></div>
+                        <div class="col-sm-6"><LCInfo
+                        benefits={this.state.benefits}
+                        rates={this.state.rates}
+                        howTo={this.state.howTo}
+                        ></LCInfo></div>
                     </div>
                     <div className="button">
                     <button className="lcbtn" onClick={this.displaySurveyForm}>
@@ -207,13 +299,13 @@ class LifeCoaching extends Component {
                     <div class="row">
                             <div class="col-sm-6">
                             <LCCard
-                            loggedIn={this.state.loggedIn}
+                            loggedIn={this.props.loggedIn}
                             infoText={this.state.infoText}
                             editText={this.editText.bind(this)}
                             updateText={this.updateText.bind(this)}
                             ></LCCard>
                             </div>
-                            <div class="col-sm-6"><LCInfo loggedIn={this.state.loggedIn}
+                            <div class="col-sm-6"><LCInfo loggedIn={this.props.loggedIn}
                             benefits={this.state.benefits}
                             rates={this.state.rates}
                             howTo={this.state.howTo}
@@ -249,13 +341,13 @@ class LifeCoaching extends Component {
                         <div class="row">
                         <div class="col-sm-6">
                             <LCCard
-                            loggedIn={this.state.loggedIn}
+                            loggedIn={this.props.loggedIn}
                             infoText={this.state.infoText}
                             editText={this.editText.bind(this)}
                             updateText={this.updateText.bind(this)}
                             ></LCCard>
                             </div>
-                            <div class="col-sm-6"><LCInfo  loggedIn={this.state.loggedIn}
+                            <div class="col-sm-6"><LCInfo  loggedIn={this.props.loggedIn}
                             benefits={this.state.benefits}
                             rates={this.state.rates}
                             howTo={this.state.howTo}

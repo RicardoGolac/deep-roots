@@ -13,4 +13,4 @@ const LCSchema = new Schema ({
       }
 });
 
-module.exports = LifeCoach = mongoose.model("lifecoach", LCSchema);
+module.exports = LifeCoach = mongoose.model("lifecoaching", LCSchema);

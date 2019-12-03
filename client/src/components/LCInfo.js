@@ -141,23 +141,21 @@ const LCInfo = (props) => {
           <TabPane tabId="2">
             <Row>
               <Col sm="12">
-                <h4>Life coaching is paid on a per miniute basis. The current rate is 1 dollar per minute.</h4>
+                <h4>{props.rates}</h4>
               </Col>
             </Row>
           </TabPane>
           <TabPane tabId="3">
               <Row>
                   <Col sm="12">
-                  <h4>If you are interested, please fill out the survey by clicking on the button below. Turbado will respond via email as soon as possible.</h4>
+                  <h4>{props.howTo}</h4>
                   </Col>
               </Row>
           </TabPane>
           <TabPane tabId="1">
               <Row>
                   <Col sm="12">
-                  <h4>Our Ancestors teach us that the beauty of life is working in tandem with the grand plan of creation. The courage of an Artist is being 
-                      able to capture these aspects in their work to retain that, which is meaningful to us as human beings. To stay to one’s purpose and calling 
-                      can be the most challenging task and the richest reward. Creative life coaching can help you do just that.</h4>
+                  <h4>{props.benefits}</h4>
                   </Col>
               </Row>
           </TabPane>
