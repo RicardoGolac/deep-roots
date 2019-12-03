@@ -36,7 +36,6 @@ class LifeCoaching extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
       }
       updateText = (value) => {
-          console.log(value);
           this.setState({
               newText: value
           })

@@ -33,7 +33,7 @@ app.use((req, res, next) => {
     return res.status(200).json({});
   }
   next();
-});
+})
 
 // Bodyparser Middleware
 app.use(bodyParser.urlencoded({ extended: false }));

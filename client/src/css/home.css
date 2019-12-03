@@ -22,18 +22,11 @@
   width: 200px;
 }
 
-.home-button {
-  outline: none;
-  background: none;
-  border: 1px solid white;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 10px;
+.home-about {
+  width: 400px;
+  padding-bottom: 20px;
 }
 
-h1 {
-  font-size: 72px;
-  background: -webkit-linear-gradient(#ffffff, #ffffff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.home-title {
+  padding-top: 30px;
 }
