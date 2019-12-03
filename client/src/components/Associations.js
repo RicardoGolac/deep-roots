@@ -296,12 +296,12 @@ class Associations extends Component {
     return (
 
       <div className = "association-container">
-        <h3 style ={{display: 'flex', justifyContent:'center', alignItems:'center', height: '10vh'}}>
+        <h3 style ={{display: 'flex', justifyContent:'center', alignItems:'center', height: '10vh', color: 'black'}}>
           Deeproots Associations
         </h3>
         {this.props.loggedIn && (
           <>
-          <h7 style ={{display: 'flex', justifyContent:'center', alignItems:'center'}}>
+          <h7 style ={{display: 'flex', justifyContent:'center', alignItems:'center', color: 'black'}}>
           Administrator Mode
           </h7>
           <button
@@ -357,7 +357,7 @@ class Associations extends Component {
                     </>
                   )}
                     <td><ui><img src = {pic}/></ui></td>
-                    <td><ul>{name}</ul></td>
+                    <td><ul style = {{color: 'black'}}>{name}</ul></td>
                     <td><ul><a href={link}>{link}</a></ul></td>
                   </tr>
                 </ListGroupItem>
