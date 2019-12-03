@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { Router, Route, Switch } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
 import history from "./history";
@@ -9,6 +9,7 @@ import "./App.css";
 import AppNavbar from "./components/AppNavbar";
 import AuthenticatedComponent from "./components/AuthenticatedComponent";
 import Home from "./components/Home";
+import EditHome from "./components/EditHome";
 import Gallery from "./components/Gallery";
 import Associations from "./components/Associations";
 import Login from "./components/Login";
@@ -16,6 +17,8 @@ import Register from "./components/Register";
 import Dashboard from "./components/Dashboard";
 import LifeCoaching from "./components/LifeCoaching";
 import Footer from "./components/Footer";
+import Workshops from "./components/Workshops";
+import Courses from "./components/Courses";
 
 class App extends Component {
   constructor(props) {
@@ -123,7 +126,12 @@ class App extends Component {
           logout={this.logout}
         />
         <Switch>
-          <Route path="/" exact component={Home} />
+          <Route
+            path="/"
+            exact
+            render={() => <Home loggedIn={this.state.loggedIn} />}
+          />
+          <Route path="/update/:id" component={EditHome} />
           <Route path="/users/register" component={Register} />
           <Route
             path="/users/login"
@@ -131,9 +139,11 @@ class App extends Component {
               <Login login={this.login} loggedIn={this.state.loggedIn} />
             )}
           />
+          <Route path="/courses" render={() => <Courses />} />
           <Route path="/gallery" render={() => <Gallery />} />
           <Route path="/Associations" render={() => <Associations />} />
           <Route path="/lifecoaching" component={LifeCoaching} />
+          <Route path="/Workshops" render={() => <Workshops />} />
           <AuthenticatedComponent verify={this.verify}>
             <Route
               path="/dashboard"

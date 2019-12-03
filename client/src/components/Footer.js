@@ -1,19 +1,26 @@
 import React from "react";
 import "../css/footer.css";
-import { Container, Nav, NavItem } from "reactstrap";
+import { Nav, NavItem } from "reactstrap";
+import { SocialIcon } from "react-social-icons";
 
 function Footer() {
   return (
-    <Container className="footer-view-container">
-      <Nav justified>
-        <NavItem eventKey={1}>Privacy policy</NavItem>
-        <NavItem eventKey={2} title="Item">
-          Terms & Conditions
-        </NavItem>
-        <NavItem eventKey={3}>Some other professional link</NavItem>
-      </Nav>
-      <div className="text-center small copyright">© Deep Roots</div>
-    </Container>
+    <div className="footer-view-container">
+      <div className="footer-container">
+        <Nav justified>
+          <NavItem eventKey={1}>
+            <SocialIcon url="https://www.facebook.com/deepwellstudio/" />
+          </NavItem>
+          <NavItem eventKey={2}>
+            <SocialIcon url="https://www.instagram.com/turbadomarabou" />
+          </NavItem>
+          <NavItem eventKey={3}>
+            <SocialIcon url="https://www.linkedin.com/in/turbado-marabou-a31b4028" />
+          </NavItem>
+        </Nav>
+        <div className="text-center small copyright">© Deep Roots Creative</div>
+      </div>
+    </div>
   );
 }
 
