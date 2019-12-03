@@ -12,6 +12,7 @@
 
 .footer-container {
   margin: 0 auto;
+  padding-top: 10px;
   padding-bottom: 10px;
   color: #000000;
 }
@@ -21,6 +22,7 @@
   display: table;
   width: 100%;
   margin: 0px 0px 0px 0px;
+  height: 50px;
 }
 
 /* .copyright {
