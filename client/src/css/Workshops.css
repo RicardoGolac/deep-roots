@@ -42,3 +42,9 @@ html { scroll-behavior: smooth; }
     );
     padding: 5%;
   }
+
+  .example{
+    width: 50%;
+    text-align: center;
+    margin: 0 auto;
+  }

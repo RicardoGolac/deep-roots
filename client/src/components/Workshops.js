@@ -1,4 +1,7 @@
 import React, { Component } from "react";
+import {Elements, StripeProvider} from 'react-stripe-elements';
+// import PaymentForm from './PaymentForm';
+import CheckoutForm from "./CheckoutForm";
 import "./../css/Workshops.css";
 import axios from "axios";
 import { type } from "os";
@@ -94,6 +97,16 @@ class Workshops extends Component {
                     <div class="row text-center">
                         <div class="col text-center">
                             <p>{this.workshopList()}</p>
+                        </div>
+                        <div class="col-12 text-center">
+                        <StripeProvider apiKey="pk_test_d5Hjit0nlbvrAEbWGibdMqxd00WakqdECy">
+                            <div className="example">
+                                <h1>Submit a $20 Workshop Donation</h1>
+                                <Elements>
+                                    <CheckoutForm />
+                                </Elements>
+                            </div>
+                        </StripeProvider>
                         </div>
                     </div>
                         <div class="row text-center">
