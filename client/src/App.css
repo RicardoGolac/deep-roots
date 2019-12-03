@@ -27,6 +27,17 @@
     top: 65px;
 }
 
+.associations-container {
+    background: linear-gradient(
+      0deg,
+      rgba(233, 210, 123, 1) 0%,
+      rgba(193, 124, 124, 1) 100%
+    );
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+  }
+
 .fade-enter {
     opacity: 0.01;
 }

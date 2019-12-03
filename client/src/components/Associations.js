@@ -19,7 +19,6 @@ class Associations extends Component {
     console.log(associations);
 
     return (
-
       <div className = "association-container">
         <h3 style ={{display: 'flex', justifyContent:'center', alignItems:'center', height: '10vh'}}>
           Deeproots Associations
