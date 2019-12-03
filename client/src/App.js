@@ -19,6 +19,7 @@ import LifeCoaching from "./components/LifeCoaching";
 import Footer from "./components/Footer";
 import Workshops from "./components/Workshops";
 import Courses from "./components/Courses";
+import EditImage from "./components/EditImage";
 
 class App extends Component {
   constructor(props) {
@@ -140,7 +141,11 @@ class App extends Component {
             )}
           />
           <Route path="/courses" render={() => <Courses />} />
-          <Route path="/gallery" render={() => <Gallery />} />
+          <Route
+            path="/gallery"
+            render={() => <Gallery loggedIn={this.state.loggedIn} />}
+          />
+          <Route path="/gallery/update/:id" component={EditImage} />
           <Route path="/Associations" render={() => <Associations />} />
           <Route path="/lifecoaching" component={LifeCoaching} />
           <Route path="/Workshops" render={() => <Workshops />} />
