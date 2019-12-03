@@ -3,6 +3,7 @@ const mongooseSetup = require("./server/config/database");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const path = require("path");
+const cors = require("cors");
 // Authentication imports
 const session = require("express-session");
 const MongoStore = require("connect-mongo")(session);
@@ -13,11 +14,11 @@ const index = require("./server/routes/index");
 const send = require("./server/routes/send");
 const fileRoutes = require("./server/routes/file-upload");
 const gallery = require("./server/routes/gallery");
+const home = require("./server/routes/home");
+const item = require("./server/routes/items");
+
 // Passport Config
 require("./server/config/passport")(passport);
-
-// Associations
-//const associations = require('./server/routes/associations');
 
 // Start express server
 const app = express();
@@ -79,15 +80,17 @@ app.use((req, res, next) => {
 app.use("/", index);
 app.use("/images", fileRoutes);
 app.use("/gallery", gallery);
+//app.use("/", index);
+app.use("/", home);
 app.use("/users", users);
 //app.use("/associations", associations);
 app.use("/send", send);
+app.use("/items", item);
 
 // Serve static assests if in production
 if (process.env.NODE_ENV === "production") {
   // Set static folder
   app.use(express.static("client/build"));
-
   app.get("*", (req, res) => {
     res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
   });
