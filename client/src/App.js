@@ -117,6 +117,7 @@ class App extends Component {
     // this.getUser();
   }
 
+
   render() {
     return (
       <Router history={history}>
@@ -149,6 +150,7 @@ class App extends Component {
           <Route path="/Associations" render={() => <Associations />} />
           <Route path="/lifecoaching" component={LifeCoaching} />
           <Route path="/Workshops" render={() => <Workshops />} />
+          
           <AuthenticatedComponent verify={this.verify}>
             <Route
               path="/dashboard"

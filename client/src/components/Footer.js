@@ -18,7 +18,7 @@ function Footer() {
             <SocialIcon url="https://www.linkedin.com/in/turbado-marabou-a31b4028" />
           </NavItem>
         </Nav>
-        <div className="text-center small copyright">© Deep Roots Creative</div>
+        <div className="text-center small copyright">© Deeproots Creative</div>
       </div>
     </div>
   );

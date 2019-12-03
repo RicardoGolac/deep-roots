@@ -1,5 +1,8 @@
 import React, { Component } from "react";
+import {Elements, StripeProvider} from 'react-stripe-elements';
 import "./../css/Workshops.css"
+// import PaymentForm from './PaymentForm';
+import CheckoutForm from "./CheckoutForm";
 
 class pageContents extends Component {
     render() {
@@ -10,7 +13,14 @@ class pageContents extends Component {
                     Here we will have some text talking about the workshops
                     </div>
                     <div class="col-sm-6 text-center">
-                    Here we will have an embed with square to pay for workshops
+                    <StripeProvider apiKey="pk_test_d5Hjit0nlbvrAEbWGibdMqxd00WakqdECy">
+                        <div className="example">
+                            <h1>Submit a $20 Workshop Donation</h1>
+                            <Elements>
+                                <CheckoutForm />
+                            </Elements>
+                        </div>
+                    </StripeProvider>
                     </div>
                 </div>
                 <div class="row text-center" style={{height: '50%'}}>

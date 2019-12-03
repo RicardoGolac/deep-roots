@@ -16,6 +16,7 @@ const fileRoutes = require("./server/routes/file-upload");
 const gallery = require("./server/routes/gallery");
 const home = require("./server/routes/home");
 const item = require("./server/routes/items");
+const stripe = require("stripe")("sk_test_gnD2FYrp6ayJuTHwlcl0gwmV00a2EIUNAE");
 
 // Passport Config
 require("./server/config/passport")(passport);
@@ -41,6 +42,7 @@ app.use((req, res, next) => {
 // Bodyparser Middleware
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json()); // allows us to deal with form data and json data
+app.use(bodyParser.text());
 
 // Connect to Database
 mongooseSetup.start();
@@ -95,5 +97,21 @@ if (process.env.NODE_ENV === "production") {
     res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
   });
 }
+
+app.post("/charge", async (req, res) => {
+  try {
+    let {status} = await stripe.charges.create({
+      amount: 2000,
+      currency: "usd",
+      description: "An example charge",
+      source: req.body
+    });
+
+    res.json({status});
+  } catch (err) {
+    console.log(err);
+    res.status(500).end();
+  }
+});
 
 app.listen(port, () => console.log(`Server started on port ${port}`));
