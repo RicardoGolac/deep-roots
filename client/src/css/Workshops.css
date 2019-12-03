@@ -1,3 +1,5 @@
+html { scroll-behavior: smooth; } 
+
 #calendar {
     height: 100%;
     width: 100%;
@@ -7,6 +9,10 @@
 
 .text-center {
   padding: 1%;
+}
+
+.break {
+  white-space: pre-line;
 }
 
 .row{

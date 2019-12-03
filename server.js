@@ -82,12 +82,13 @@ app.use("/", index);
 app.use("/images", fileRoutes);
 app.use("/gallery", gallery);
 //app.use("/", index);
+app.use("/workshops", workshops);
 app.use("/", home);
 app.use("/users", users);
 //app.use("/associations", associations);
 app.use("/send", send);
 app.use("/items", item);
-app.use("/Workshops", workshops);
+
 
 // Serve static assests if in production
 if (process.env.NODE_ENV === "production") {

@@ -25,32 +25,32 @@ router.post("/add", (req, res) => {
 });
 
 // Update by ID
-// router.post("/update/:id", (req, res) => {
-//   Workshop.findById(req.params.id)
-//     .then(Workshops => {
-//       Workshops.id = req.body.id;
-//       Workshops.contents = req.body.contents;
+router.post("/update/:id", (req, res) => {
+  Workshop.findById(req.params.id)
+    .then(Workshops => {
+      Workshops.id = req.body.id;
+      Workshops.contents = req.body.contents;
 
-//       Workshops
-//         .save()
-//         .then(() => res.json("Workshop updated!"))
-//         .catch(err => res.status(400).json("Error: " + err));
-//     })
-//     .catch(err => res.status(400).json("Error: " + err));
-// });
+      Workshops
+        .save()
+        .then(() => res.json("Workshop updated!"))
+        .catch(err => res.status(400).json("Error: " + err));
+    })
+    .catch(err => res.status(400).json("Error: " + err));
+});
 
 // Find By ID
-// router.get("/:id", (req, res) => {
-//   Workshop.findById(req.params.id)
-//     .then(Workshops => res.json(Workshops))
-//     .catch(err => res.status(404).json("Error: " + err));
-// });
+router.get("/:id", (req, res) => {
+  Workshop.findById(req.params.id)
+    .then(Workshops => res.json(Workshops))
+    .catch(err => res.status(404).json("Error: " + err));
+});
 
 // Delete by ID
-// router.delete("/:id", (req, res) => {
-//   Workshop.findByIdAndDelete(req.params.id)
-//     .then(() => res.json("Exercise deleted!"))
-//     .catch(err => res.status(404).json("Error: " + err));
-// });
+router.delete("/:id", (req, res) => {
+  Workshop.findByIdAndDelete(req.params.id)
+    .then(() => res.json("Exercise deleted!"))
+    .catch(err => res.status(404).json("Error: " + err));
+});
 
 module.exports = router;

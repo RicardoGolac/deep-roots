@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 // Create Schema
 const WorkshopSchema = new Schema({
   id: {
-    type: Number,
+    type: String,
     required: true
   },
   contents: {
