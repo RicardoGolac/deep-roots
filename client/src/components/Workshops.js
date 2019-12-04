@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./../css/Workshops.css";
 import axios from "axios";
 import { type } from "os";
+import { Button} from 'reactstrap';
 
 class Workshops extends Component {
 
@@ -16,7 +17,7 @@ class Workshops extends Component {
         };
     }
 
-    componentDidMount() {
+    componentWillMount() {
         axios
             .get("http://localhost:5000/workshops/")
             .then(res => {
@@ -29,8 +30,14 @@ class Workshops extends Component {
             });
         console.log(this.state.workshopsArray);
     }
-
+    editText() {
+        console.log("edit")
+    }
+    deleteText() {
+        console.log("delete")
+    }
     workshopList() {
+        if (!this.props.loggedIn) {
         console.log(this.state.workshopsArray);
         var i = 1;
         var tmp;
@@ -84,6 +91,74 @@ class Workshops extends Component {
           }
         });
       }
+      else {
+        console.log(this.state.workshopsArray);
+        var i = 1;
+        var tmp;
+        return this.state.workshopsArray.map(workshop => {
+            i++;
+            if(i%2 == 0)
+          {
+              if(i == 2 || i == 4 || i == 12 || i == 20)
+              {
+                return (   
+                    <div>
+                    <h3><br/>{workshop.contents}</h3>
+                    </div>
+                );
+              }
+              else
+              {
+                  return (
+                      <div>
+                      <h4>{workshop.contents}</h4>
+                      </div>
+
+                  );
+              }
+          }
+          else if(i == 3 || i == 13 || i == 21)
+          {
+              console.log('hi');
+              return(
+                  <div>
+                  <p>{workshop.contents}</p>
+
+                  </div>
+
+              )
+          }
+          else if(i > 21)
+          {
+            return ( 
+                <div>  
+                    <p>{workshop.contents}</p>
+                    <a href="#calendar">Go to Calendar</a>
+                    <p><br/></p>
+                    <Button onClick={this.editText}>Edit</Button>
+                    <Button onClick={this.deleteText}>Delete</Button>
+                </div>  
+            );
+          }
+          else
+          {
+            return ( 
+                <div>  
+                    <p>{workshop.contents}<br/><br/>
+                        One hour workshop organization Offering free or low cost programing: $125.00-$250.00<br/>
+                        One day workshops organization Offering free or low cost programing: $500.00<br/>
+                        Not including Food, lodging and travel costs
+                    </p>
+                    <a href="#calendar">Go to Calendar</a>
+                    <p><br/></p>
+                    <Button onClick={this.editText}>Edit</Button>
+                    <Button onClick={this.deleteText}>Delete</Button>
+                </div>  
+            );
+          }
+        });
+      }
+    }
 
     
 
