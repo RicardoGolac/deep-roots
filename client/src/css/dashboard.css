@@ -1,13 +1,28 @@
 .dashboard-view-container {
-  background-color: #dce9ec;
+  color: #ffffff;
+  background: rgb(233, 210, 123);
+  background: linear-gradient(
+    0deg,
+    rgba(233, 210, 123, 1) 0%,
+    rgba(193, 124, 124, 1) 100%
+  );
   height: 600px;
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 100%;
+  min-height: 700px;
 }
 
 .dashboard-container {
-  background-color: #c4e4e2;
+  color: #ffffff;
+  background: rgb(233, 210, 123);
+  background: linear-gradient(
+    0deg,
+    rgba(233, 210, 123, 1) 0%,
+    rgba(193, 124, 124, 1) 100%
+  );
+  text-align: center;
   width: 500px;
   margin: 0 auto;
   padding: 10px;

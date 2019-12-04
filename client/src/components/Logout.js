@@ -1,4 +1,5 @@
 import React from "react";
+import "../css/logout.css";
 
 const Logout = props => {
   const onSubmit = event => {
@@ -9,7 +10,7 @@ const Logout = props => {
   };
 
   return (
-    <div className="nav-item">
+    <div className="logout-button">
       <form onSubmit={onSubmit}>
         <button className="nav-link" type="submit">
           Logout
