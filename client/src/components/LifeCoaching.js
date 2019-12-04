@@ -123,8 +123,8 @@ class LifeCoaching extends Component {
         .then(response => {
             const data = response.data;
             var txt = JSON.stringify(data.text);
+            txt = (txt.replace(/\"/g, "")); 
             this.setState({infoText : txt})
-            console.log(txt);
         })
         .catch(error => {
             console.log(error);
@@ -134,8 +134,8 @@ class LifeCoaching extends Component {
         .then(response => {
             const data = response.data;
             var txt = JSON.stringify(data.text);
+            txt = (txt.replace(/\"/g, "")); 
             this.setState({rates : txt})
-            console.log(data);
         })
         .catch(error => {
             console.log(error);
@@ -145,8 +145,8 @@ class LifeCoaching extends Component {
         .then(response => {
             const data = response.data;
             var txt = JSON.stringify(data.text);
+            txt = (txt.replace(/\"/g, "")); 
             this.setState({benefits : txt})
-            console.log(data);
         })
         .catch(error => {
             console.log(error);
@@ -156,8 +156,8 @@ class LifeCoaching extends Component {
         .then(response => {
             const data = response.data;
             var txt = JSON.stringify(data.text);
+            txt = (txt.replace(/\"/g, "")); 
             this.setState({howTo : txt})
-            console.log(data);
         })
         .catch(error => {
             console.log(error);
@@ -202,7 +202,7 @@ class LifeCoaching extends Component {
                 </div>
                 <div className="lcinfo">
                 <div class="row">
-                        <div class="col-sm-6"><LCCard
+                        <div class="col-sm-6"><LCCard 
                         loggedIn={this.props.loggedIn}
                         infoText={this.state.infoText}
                         editText={this.editText.bind(this)}
@@ -236,7 +236,7 @@ class LifeCoaching extends Component {
                     <div className="lcinfo">
                     
                     <div class="row">
-                        <div class="col-sm-6"><LCCard
+                        <div class="col-sm-6"><LCCard 
                         loggedIn={this.props.loggedIn}
                         infoText={this.state.infoText}
                         editText={this.editText.bind(this)}
@@ -335,7 +335,7 @@ class LifeCoaching extends Component {
                         
                         <div class="row">
                         <div class="col-sm-6">
-                            <LCCard
+                            <LCCard 
                             loggedIn={this.props.loggedIn}
                             infoText={this.state.infoText}
                             editText={this.editText.bind(this)}

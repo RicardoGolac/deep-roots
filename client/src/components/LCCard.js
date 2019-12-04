@@ -16,18 +16,47 @@ const LCCard = (props) => {
   if (!props.loggedIn) {
     return (
       <div>
+        <h4 className="mainInfo">
+            {props.infoText}
+        </h4>
+      </div>
+    );
+  }
+  else {
+    return (
+      <div>
+        <h4 className="mainInfo">
+        {props.infoText}
+        </h4>
+      <form>
+          <textarea
+          type="text"
+          placeholder="New Description"
+          ref={ (input) => newText = input }
+          onChange={updateText.bind(this)}
+          ></textarea>
+      </form>
+      <Button onClick={() => props.editText()}>Edit</Button>
+      </div>
+
+
+    );
+
+  }
+};
+
+export default LCCard;
+
+/*
         <Card>
           <CardImg top width="100%" src={require("./photos/clc.jpg")} alt="clc image" />
           <CardBody>
             <CardText>{props.infoText}</CardText>
           </CardBody>
         </Card>
-      </div>
-    );
-  }
-  else {
-    return (
-      <Card>
+*/
+/*
+<Card>
       <CardImg top width="100%" src={require("./photos/clc.jpg")} alt="clc image" />
       <CardBody>
       <CardText>{props.infoText}</CardText>
@@ -42,9 +71,4 @@ const LCCard = (props) => {
       <Button onClick={() => props.editText()}>Edit</Button>
       </CardBody>
   </Card>
-    );
-
-  }
-};
-
-export default LCCard;
+*/

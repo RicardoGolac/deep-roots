@@ -7,6 +7,9 @@
   );
   padding-bottom: 20px;
 }
+.mainInfo {
+  color:white;
+}
 .lcinfo {
   text-align: center;
   margin: 20px;
