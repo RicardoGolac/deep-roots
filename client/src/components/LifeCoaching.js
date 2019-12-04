@@ -10,10 +10,6 @@ import {
     CardTitle, CardSubtitle, Button
   } from 'reactstrap';
 
-  //TODO:
-  //make logged in the state/prop from app.js for final
-  //states need to get data from database when constructed
-  //edit functions need to edit data in database 
 
 class LifeCoaching extends Component {
     constructor(props) {
@@ -121,7 +117,7 @@ class LifeCoaching extends Component {
       resetForm(){
         document.getElementById('contact-form').reset();
     }
-    componentDidMount() {
+    componentWillMount() {
         axios
         .get("http://localhost:5000/editLC/display/0")
         .then(response => {

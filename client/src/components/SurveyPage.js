@@ -324,9 +324,9 @@ class SurveyPage extends Component {
     }
 }).then((response)=>{
     if (response.data.msg === 'success'){
-        alert("Message Sent."); 
+        alert("Survey submitted."); 
     }else if(response.data.msg === 'fail'){
-        alert("Message failed to send.")
+        alert("Survey failed to submit.")
     }
 })
 

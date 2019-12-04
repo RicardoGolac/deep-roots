@@ -32,12 +32,12 @@ const LCCard = (props) => {
       <CardBody>
       <CardText>{props.infoText}</CardText>
       <form>
-          <input
+          <textarea
           type="text"
           placeholder="New Description"
           ref={ (input) => newText = input }
           onChange={updateText.bind(this)}
-          ></input>
+          ></textarea>
       </form>
       <Button onClick={() => props.editText()}>Edit</Button>
       </CardBody>

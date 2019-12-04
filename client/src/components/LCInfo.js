@@ -63,12 +63,12 @@ const LCInfo = (props) => {
               </Col>
             </Row>
             <form>
-                <input
+                <textarea
                 type="text"
                 placeholder="New Description"
                 ref={ (input) => newRates = input }
                 onChange={updateRates.bind(this)}
-                ></input>
+                ></textarea>
             </form>
             <Button onClick={props.editRates}>Edit</Button>
           </TabPane>
@@ -79,12 +79,12 @@ const LCInfo = (props) => {
                   </Col>
               </Row>
               <form>
-                  <input
+                  <textarea
                   type="text"
                   placeholder="New Description"
                   ref={ (input) => newHowTo = input }
                   onChange={updateHowTo.bind(this)}
-                  ></input>
+                  ></textarea>
               </form>
               <Button onClick={props.editHowTo}>Edit</Button>
           </TabPane>
@@ -95,12 +95,12 @@ const LCInfo = (props) => {
                   </Col>
               </Row>
               <form>
-                  <input
+                  <textarea
                   type="text"
                   placeholder="New Description"
                   ref={ (input) => newBen = input }
                   onChange={updateBen.bind(this)}
-                  ></input>
+                  ></textarea>
               </form>
               <Button onClick={props.editBenefits}>Edit</Button>
           </TabPane>
