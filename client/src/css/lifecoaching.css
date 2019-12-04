@@ -16,6 +16,9 @@
   font-size: 20px;
 
 }
+.lcimg {
+  border-radius: 8px;
+}
 .lctitle {
   height: 20px;
   padding: 20px;

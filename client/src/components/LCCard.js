@@ -16,6 +16,7 @@ const LCCard = (props) => {
   if (!props.loggedIn) {
     return (
       <div>
+        <img className="lcimg" src={require("./photos/clc.jpg")} alt="Smiley face" height="250" width="320"></img>
         <h4 className="mainInfo">
             {props.infoText}
         </h4>
@@ -25,6 +26,7 @@ const LCCard = (props) => {
   else {
     return (
       <div>
+        <img className="lcimg" src={require("./photos/clc.jpg")} alt="Smiley face" height="250" width="320"></img>
         <h4 className="mainInfo">
         {props.infoText}
         </h4>
