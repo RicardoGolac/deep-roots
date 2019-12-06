@@ -17,9 +17,11 @@
 
 .home-container {
   padding-top: 0;
+  width: 350px;
+  padding: 4px;
 }
 
-.home-about {
+/* .home-about {
   width: 200px;
 }
 
@@ -31,3 +33,8 @@
 .home-title {
   padding-top: 30px;
 }
+
+input[type="text"] {
+  padding: 20px 10px;
+  line-height: 28px;
+} */

@@ -142,13 +142,13 @@ class App extends Component {
             )}
           />
           <Route path="/courses" render={() => <Courses />} />
+          <Route path="/gallery/update/:id" component={EditImage} />
           <Route
             path="/gallery"
             render={() => <Gallery loggedIn={this.state.loggedIn} />}
           />
-          <Route path="/gallery/update/:id" component={EditImage} />
           <Route
-            path="/Associations"
+            path="/associations"
             render={() => <Associations loggedIn={this.state.loggedIn} />}
           />
           <Route
