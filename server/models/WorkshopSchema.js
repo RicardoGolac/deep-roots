@@ -5,15 +5,18 @@ const Schema = mongoose.Schema;
 const WorkshopSchema = new Schema({
   id: {
     type: String,
-    required: true
+  },
+  sectionTitle: {
+    type: String
   },
   title: {
     type: String,
-    required: true
   },
   contents: {
     type: String,
-    required: true
+  },
+  price: {
+    type: String
   },
   date: {
       type: Date,
