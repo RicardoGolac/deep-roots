@@ -155,7 +155,7 @@ class App extends Component {
             path="/lifecoaching"
             render={() => <LifeCoaching loggedIn={this.state.loggedIn} />}
           />
-          <Route path="/workshops/update/:id" component={EditWorkshops} />} />
+          <Route path="/workshops/update/:id" component={EditWorkshops} />
           <Route
             path="/workshops"
             render={() => <Workshops loggedIn={this.state.loggedIn} />}
