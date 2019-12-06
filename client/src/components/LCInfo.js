@@ -84,7 +84,9 @@ const LCInfo = props => {
                 onChange={updateRates.bind(this)}
               ></textarea>
             </form>
-            <Button onClick={props.editRates}>Edit</Button>
+            <Button className="lcEditBtn" onClick={props.editRates}>
+              Edit
+            </Button>
           </TabPane>
           <TabPane tabId="3">
             <Row>
@@ -100,7 +102,9 @@ const LCInfo = props => {
                 onChange={updateHowTo.bind(this)}
               ></textarea>
             </form>
-            <Button onClick={props.editHowTo}>Edit</Button>
+            <Button className="lcEditBtn" onClick={props.editHowTo}>
+              Edit
+            </Button>
           </TabPane>
           <TabPane tabId="1">
             <Row>
@@ -116,7 +120,9 @@ const LCInfo = props => {
                 onChange={updateBen.bind(this)}
               ></textarea>
             </form>
-            <Button onClick={props.editBenefits}>Edit</Button>
+            <Button className="lcEditBtn" onClick={props.editBenefits}>
+              Edit
+            </Button>
           </TabPane>
         </TabContent>
       </div>

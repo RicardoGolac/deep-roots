@@ -11,7 +11,7 @@
 } */
 
 button[type="submit"] {
-  background-color: rgba(193, 124, 124, 1);
+  background-color: transparent;
   border: 2px solid #ffffff;
   border-radius: 7px;
   color: #ffffff;

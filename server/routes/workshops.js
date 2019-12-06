@@ -16,7 +16,10 @@ router.post("/add", (req, res) => {
     // 'req.body' will contain info from a form in the front end
     // make sure to assign all parts of it to the properties of our schema
     id: req.body.id,
-    contents: req.body.contents
+    title: req.body.title,
+    contents: req.body.contents,
+    sectionTitle: req.body.sectionTitle,
+    price: req.body.price
   });
   newWorkshop
     .save()
@@ -29,7 +32,10 @@ router.post("/update/:id", (req, res) => {
   Workshop.findById(req.params.id)
     .then(Workshops => {
       Workshops.id = req.body.id;
+      Workshops.title = req.body.title;
       Workshops.contents = req.body.contents;
+      Workshops.sectionTitle = req.body.sectionTitle;
+      Workshops.price = req.body.price;
 
       Workshops
         .save()
@@ -49,7 +55,7 @@ router.get("/:id", (req, res) => {
 // Delete by ID
 router.delete("/:id", (req, res) => {
   Workshop.findByIdAndDelete(req.params.id)
-    .then(() => res.json("Exercise deleted!"))
+    .then(() => res.json("Workshop deleted!"))
     .catch(err => res.status(404).json("Error: " + err));
 });
 

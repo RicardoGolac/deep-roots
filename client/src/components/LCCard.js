@@ -40,7 +40,9 @@ const LCCard = props => {
             onChange={updateText.bind(this)}
           ></textarea>
         </form>
-        <Button onClick={() => props.editText()}>Edit</Button>
+        <Button className="lcEditBtn" onClick={() => props.editText()}>
+          Edit
+        </Button>
       </div>
     );
   }

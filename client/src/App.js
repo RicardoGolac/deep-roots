@@ -20,6 +20,7 @@ import Footer from "./components/Footer";
 import Workshops from "./components/Workshops";
 import Courses from "./components/Courses";
 import EditImage from "./components/EditImage";
+import EditWorkshops from "./components/EditWorkshops";
 
 class App extends Component {
   constructor(props) {
@@ -154,7 +155,11 @@ class App extends Component {
             path="/lifecoaching"
             render={() => <LifeCoaching loggedIn={this.state.loggedIn} />}
           />
-          <Route path="/workshops" render={() => <Workshops />} />
+          <Route path="/workshops/update/:id" component={EditWorkshops} />
+          <Route
+            path="/workshops"
+            render={() => <Workshops loggedIn={this.state.loggedIn} />}
+          />
           <AuthenticatedComponent verify={this.verify}>
             <Route
               path="/dashboard"

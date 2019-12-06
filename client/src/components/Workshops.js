@@ -1,15 +1,47 @@
 import React, { Component } from "react";
 import "./../css/Workshops.css";
 import axios from "axios";
-import { type } from "os";
+import { Link } from "react-router-dom";
+
+const WorkshopItem = props => (
+  <div>
+    {props.workshop.sectionTitle && <h1> {props.workshop.sectionTitle} </h1>}
+    {props.workshop.title && <h2> {props.workshop.title} </h2>}
+    {props.workshop.contents && <p> {props.workshop.contents} </p>}
+    <br />
+    {props.workshop.price && <p> {props.workshop.price} </p>}
+    {!props.loggedIn && <a href="#calendar">Go to Calendar</a>}
+    {props.loggedIn && (
+      <>
+        <Link to={"/workshops/update/" + props.workshop._id}>edit</Link> |{" "}
+        <a
+          href="#"
+          onClick={() => {
+            props.deleteWorkshop(props.workshop._id);
+          }}
+        >
+          delete
+        </a>
+      </>
+    )}
+  </div>
+);
 
 class Workshops extends Component {
   constructor(props) {
     super(props);
-
+    this.onSubmit = this.onSubmit.bind(this);
+    this.onChangeST = this.onChangeST.bind(this);
+    this.onChangeTitle = this.onChangeTitle.bind(this);
+    this.onChangeContents = this.onChangeContents.bind(this);
+    this.onChangePrice = this.onChangePrice.bind(this);
+    this.deleteWorkshop = this.deleteWorkshop.bind(this);
     this.state = {
       id: "",
+      sectionTitle: "",
+      title: "",
       contents: "",
+      price: "",
       workshopsArray: []
     };
   }
@@ -21,7 +53,6 @@ class Workshops extends Component {
         const data = res.data;
         this.setState({ workshopsArray: data });
         console.log(this.state.workshopsArray);
-        console.log(this.state.workshopsArray[1].contents);
       })
       .catch(err => {
         console.log(err);
@@ -29,58 +60,78 @@ class Workshops extends Component {
     console.log(this.state.workshopsArray);
   }
 
+  onChangeST(e) {
+    this.setState({
+      sectionTitle: e.target.value
+    });
+  }
+
+  onChangeTitle(e) {
+    this.setState({
+      title: e.target.value
+    });
+  }
+
+  onChangeContents(e) {
+    this.setState({
+      contents: e.target.value
+    });
+  }
+
+  onChangePrice(e) {
+    this.setState({
+      price: e.target.value
+    });
+  }
+
+  onSubmit(e) {
+    // This first line prevents the regular html form from doing what
+    // it normally does when a submit button is pressed
+    e.preventDefault();
+
+    const workshop = {
+      sectionTitle: this.state.sectionTitle,
+      title: this.state.title,
+      contents: this.state.contents,
+      price: this.state.price
+    };
+    console.log(workshop);
+    axios
+      .post("http://localhost:5000/workshops/add", workshop)
+      .then(res => console.log(res.data));
+
+    // Clear the inputs
+    this.setState({
+      sectionTitle: "",
+      title: "",
+      contents: "",
+      price: ""
+    });
+  }
+
+  deleteWorkshop(id) {
+    axios
+      .delete("http://localhost:5000/workshops/" + id)
+      .then(res => console.log("Object deleted: " + res.data))
+      .catch(err => {
+        console.log(err);
+      });
+
+    this.setState({
+      workshopsArray: this.state.workshopsArray.filter(el => el._id !== id)
+    });
+  }
   workshopList() {
     console.log(this.state.workshopsArray);
-    var i = 1;
-    var tmp;
-    return this.state.workshopsArray.map(workshop => {
-      i++;
-      if (i % 2 === 0) {
-        if (i === 2 || i === 4 || i === 12 || i === 20) {
-          return (
-            <h3>
-              <br />
-              {workshop.contents}
-            </h3>
-          );
-        } else {
-          return <h4>{workshop.contents}</h4>;
-        }
-      } else if (i === 3 || i === 13 || i === 21) {
-        console.log("hi");
-        return <p>{workshop.contents}</p>;
-      } else if (i > 21) {
-        return (
-          <div>
-            <p>{workshop.contents}</p>
-            <a href="#calendar">Go to Calendar</a>
-            <p>
-              <br />
-            </p>
-          </div>
-        );
-      } else {
-        return (
-          <div>
-            <p>
-              {workshop.contents}
-              <br />
-              <br />
-              One hour workshop organization Offering free or low cost
-              programing: $125.00-$250.00
-              <br />
-              One day workshops organization Offering free or low cost
-              programing: $500.00
-              <br />
-              Not including Food, lodging and travel costs
-            </p>
-            <a href="#calendar">Go to Calendar</a>
-            <p>
-              <br />
-            </p>
-          </div>
-        );
-      }
+    return this.state.workshopsArray.map(curWorkshop => {
+      return (
+        <WorkshopItem
+          workshop={curWorkshop}
+          deleteWorkshop={this.deleteWorkshop}
+          key={curWorkshop._id}
+          loggedIn={this.props.loggedIn}
+        />
+      );
     });
   }
 
@@ -88,6 +139,60 @@ class Workshops extends Component {
     return (
       <div class="workshops-container container-fluid text-center">
         <div class="container">
+          <h2>Workshops</h2>
+          <h3>Let's Grow Together</h3>
+          {this.props.loggedIn && (
+            <>
+              <div>
+                <h3>Admin Privleges Enabled!</h3>
+                <form onSubmit={this.onSubmit}>
+                  <div className="form-group">
+                    <label>Section Title: </label>
+                    <textarea
+                      type="text"
+                      className="form-control"
+                      value={this.state.name}
+                      onChange={this.onChangeST}
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label>Title: </label>
+                    <textarea
+                      type="text"
+                      className="form-control"
+                      value={this.state.name}
+                      onChange={this.onChangeTitle}
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label>Contents: </label>
+                    <textarea
+                      type="text"
+                      className="form-control"
+                      value={this.state.message}
+                      onChange={this.onChangeContents}
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label>Price: </label>
+                    <textarea
+                      type="text"
+                      className="form-control"
+                      value={this.state.name}
+                      onChange={this.onChangePrice}
+                    />
+                  </div>
+                  <div className="form-group">
+                    <input
+                      type="submit"
+                      value="Create Workshop"
+                      className="btn btn-primary"
+                    />
+                  </div>
+                </form>
+              </div>
+            </>
+          )}
           <div class="row text-center">
             <div class="col text-center">
               <p>{this.workshopList()}</p>
