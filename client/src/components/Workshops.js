@@ -10,6 +10,7 @@ const WorkshopItem = props => (
     {props.workshop.contents && <p> {props.workshop.contents} </p>}
     <br />
     {props.workshop.price && <p> {props.workshop.price} </p>}
+    <a href="#calendar">Go to Calendar</a>
     {props.loggedIn && (
       <>
         <Link to={"/workshops/update/" + props.workshop._id}>edit</Link> |{" "}
