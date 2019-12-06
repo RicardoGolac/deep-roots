@@ -100,7 +100,7 @@ class EditHome extends Component {
             </div>
             <div className="form-group">
               <label>Message: </label>
-              <input
+              <textarea
                 type="text"
                 required
                 className="form-control"

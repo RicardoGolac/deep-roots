@@ -1,47 +1,71 @@
 .lcview {
-    background-color: #dce9ec;
+  background: rgb(233, 210, 123);
+  background: linear-gradient(
+    0deg,
+    rgba(233, 210, 123, 1) 0%,
+    rgba(193, 124, 124, 1) 100%
+  );
+  padding-bottom: 20px;
+}
+.mainInfo {
+  color:white;
+}
+.lcinfo {
+  text-align: center;
+  margin: 20px;
+  font-size: 20px;
 
-  }
+}
+.lcimg {
+  border-radius: 8px;
+}
 .lctitle {
-    height: 20px;
-    padding: 20px;
-    color: rgb(3, 68, 129);
-    text-align: center;
-    font-size: 32px;
-    font-family: 'Sunshiney';
+  height: 20px;
+  padding: 20px;
+  color: white;
+  text-align: center;
+  font-size: 32px;
 }
 .lcsubtitle {
-    height: 100px;
-    padding: 20px;
-    color: rgb(16, 97, 173);
-    text-align: center;
-    font-size: 22px;
-    font-family: 'Sunshiney', cursive;
+  height: 100px;
+  padding: 20px;
+  color: white;
+  text-align: center;
+  font-size: 22px;
 }
 .button {
-    text-align: center;
-    height: 100px;
+  text-align: center;
+  height: 100px;
+  margin: 20px;
 }
-.btn {
-    box-shadow: 0px 10px 14px -7px #276873;
-	background:linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
-	background-color:#599bb3;
-	border-radius:8px;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:20px;
-	font-weight:bold;
-	padding:13px 32px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #3d768a;
+.lcbtn {
+  backface-visibility: hidden;
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  white-space: nowrap;
+  background: rgba(76.82332739661389%,53.41654478165109%,52.184608854547776%,0);
+  border-radius: 100px;
+  border: 4px solid #000000;
+  border-width: 4px 4px 4px 4px;
+  padding: 5px 20px 5px 20px;
+    color: #000000;
+  font-size: 16px;
+  font-family: Helvetica Neue;
+  font-weight: 900;
+  font-style: normal
 }
-.btn:hover {
-	background:linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
-	background-color:#408c99;
+.lcbtn:hover {
+  background:linear-gradient(to bottom, rgba(233, 210, 123, 1) 5%, rgba(193, 124, 124, 1) 100%);
+background-color:#ccc2a6;
 }
-.btn:active {
-	position:relative;
-	top:1px;
+.lcbtn:active {
+position:relative;
+top:1px;
+}
+.row {
+ margin: 10px; 
+}
+.tabtext {
+  color: white;
 }

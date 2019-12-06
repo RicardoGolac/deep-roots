@@ -1,27 +1,61 @@
+.association-container {
+  text-align: center;
+  background: rgb(233, 210, 123);
+  background: linear-gradient(
+    0deg,
+    rgba(233, 210, 123, 1) 0%,
+    rgba(193, 124, 124, 1) 100%
+  );
+  color: #ffffff;
+}
+
+.association-table-container {
+  background: transparent;
+}
+
 .remove-btn {
-    margin-right: 2.5rem;
+  margin-right: 1rem;
+}
+
+.edit-btn {
+  margin-right: 2.5rem;
 }
 
 .add-btn {
-    position: absolute;
-    right: 100px;
-    top: 140px;
+  outline: none;
+  border: 1px solid white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  box-shadow: 0px 10px 14px -7px #276873;
+  background: linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
+  background-color: #599bb3;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #3d768a;
+  position: absolute;
+  right: 100px;
+  top: 80px;
 }
 
 .fade-enter {
-    opacity: 0.01;
+  opacity: 0.01;
 }
 
 .fade-enter-active {
-    opacity: 1;
-    transition: opacity 1000ms ease-in;
+  opacity: 1;
+  transition: opacity 1000ms ease-in;
 }
 
 .fade-exit {
-    opacity: 1;
+  opacity: 1;
 }
 
 .fade-exit-active {
-    opacity: 0.01;
-    transition: opacity 1000ms ease-in;
+  opacity: 0.01;
+  transition: opacity 1000ms ease-in;
 }

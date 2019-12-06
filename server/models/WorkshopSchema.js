@@ -7,6 +7,10 @@ const WorkshopSchema = new Schema({
     type: String,
     required: true
   },
+  title: {
+    type: String,
+    required: true
+  },
   contents: {
     type: String,
     required: true

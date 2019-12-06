@@ -3,36 +3,14 @@ import "./../css/Workshops.css";
 import axios from "axios";
 import { type } from "os";
 import { Button} from 'reactstrap';
-import { Link } from "react-router-dom"
 
-const WorkshopItem = props => (
-    <div>
-        <h3>{props.workshop.title}</h3>
-        <p> {props.workshop.contents} </p>
-        {props.loggedIn && (
-            <>
-                <Link to={"/workshop/update/" + props.workshop._id}>edit</Link> |{" "}
-                <a
-                href="#"
-                onClick={() => {
-                    props.deleteWorkshop(props.workshop._id);
-                }}
-                >
-                delete
-                </a>
-            </>
-        )}
-    </div>
-);
-
-class Workshops extends Component {
+class EditWorkshops extends Component {
 
     constructor(props){
         super(props);
 
         this.state = {
             id: "",
-            title: "",
             contents: "",
             workshopsArray: []
 
@@ -40,6 +18,16 @@ class Workshops extends Component {
     }
 
     componentWillMount() {
+        axios
+        .get("http://localhost:5000/workshops" + this.props.match.params.id)
+        .then(res => {
+            this.setState({
+                contents: res.data.contents
+            })
+        })
+        .catch(err => {
+            console.log(err);
+        });
         axios
             .get("http://localhost:5000/workshops/")
             .then(res => {
@@ -55,24 +43,9 @@ class Workshops extends Component {
     editText() {
         console.log("edit")
     }
-    deleteWorkshop() {
-        console.log("delete")
-    }
-    workshopList() {
-        console.log(this.state.workshopsArray);
-        return this.state.workshopsArray.map(curWorkshop => {
-            return (
-                <WorkshopItem 
-                workshop={curWorkshop}
-                deleteWorkshop={this.deleteWorkshop}
-                key={curWorkshop._id}
-                loggedIn={this.props.loggedIn}
-            />
-            ) 
-        });
-    }
 
-    
+
+
 
     render() {
         return (
@@ -80,7 +53,7 @@ class Workshops extends Component {
                 <div class="container">
                     <div class="row text-center">
                         <div class="col text-center">
-                            <p>{this.workshopList()}</p>
+                            <p>list was here</p>
                         </div>
                     </div>
                         <div class="row text-center">
@@ -102,4 +75,4 @@ class Workshops extends Component {
 
 }
 
-export default Workshops;
+export default EditWorkshops;

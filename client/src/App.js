@@ -146,8 +146,8 @@ class App extends Component {
             render={() => <Gallery loggedIn={this.state.loggedIn} />}
           />
           <Route path="/gallery/update/:id" component={EditImage} />
-          <Route path="/Associations" render={() => <Associations />} />
-          <Route path="/lifecoaching" component={LifeCoaching} />
+          <Route path="/Associations" render={() => <Associations loggedIn={this.state.loggedIn} />} />
+          <Route path="/lifecoaching" render={() => <LifeCoaching loggedIn={this.state.loggedIn} />} />
           <Route path="/workshops" render={() => <Workshops loggedIn={this.state.loggedIn} />} />
           <AuthenticatedComponent verify={this.verify}>
             <Route

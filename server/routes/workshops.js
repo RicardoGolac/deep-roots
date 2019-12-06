@@ -16,6 +16,7 @@ router.post("/add", (req, res) => {
     // 'req.body' will contain info from a form in the front end
     // make sure to assign all parts of it to the properties of our schema
     id: req.body.id,
+    title: req.body.title,
     contents: req.body.contents
   });
   newWorkshop
@@ -29,6 +30,7 @@ router.post("/update/:id", (req, res) => {
   Workshop.findById(req.params.id)
     .then(Workshops => {
       Workshops.id = req.body.id;
+      Workshops.title = req.body.title;
       Workshops.contents = req.body.contents;
 
       Workshops
