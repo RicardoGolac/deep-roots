@@ -3,16 +3,15 @@ const router = express.Router();
 var nodemailer = require('nodemailer');
 var bodyParser = require('body-parser');
 var jsonParser = bodyParser.json();
-//const creds = require('../config/mailer'); set up for real email
+const creds = require('../config/mailer'); 
 
 var transport = nodemailer.createTransport({
-    host: "smtp.mailtrap.io",
-    port: 2525,
-    auth: {
-      user: "1888a41eca5f5a",
-      pass: "c8cfc8bab2bb69"
-    }
-  });
+  service: 'gmail',
+  auth: {
+         user: creds.USER,
+         pass: creds.PASS
+     }
+ });
 
 transport.verify((error, success) => {
   if (error) {
@@ -26,8 +25,8 @@ transport.verify((error, success) => {
 router.post('/complete', jsonParser, (req, res) => {
     var message = JSON.stringify(req.body, null, "\t");
     var mail = {
-      from: 'surveybot@dr.com',
-      to: 'turbado@dr.com',  
+      from: 'deeprootssurveybot@gmail.com',
+      to: 'deeprootssurveybot@gmail.com',  
       subject: 'New Life Coaching Survey Filled Out!',
       text: message
     }
@@ -49,11 +48,11 @@ router.post('/complete', jsonParser, (req, res) => {
     var name = req.body.name
     var email = req.body.email
     var message = req.body.message
-    var content = `name: ${name} \n email: ${email} \n message: ${message} `
+    var content = `name: ${name} \n email: ${email} \n question: ${message} `
 
     var mail = {
-      from: 'surveybot@dr.com',
-      to: 'turbado@dr.com',  
+      from: 'deeprootssurveybot@gmail.com',
+      to: 'deeprootssurveybot@gmail.com',  
       subject: 'Someone has a question about life coaching!',
       text: content
     }

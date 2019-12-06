@@ -1,0 +1,18 @@
+/* .logout-button {
+  background-color: #a8d6aa;
+  border: 2px solid #ffffff;
+  border-radius: 5px;
+  color: #b67474;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+} */
+
+button[type="submit"] {
+  background-color: rgba(193, 124, 124, 1);
+  border: 2px solid #ffffff;
+  border-radius: 7px;
+  color: #ffffff;
+}
