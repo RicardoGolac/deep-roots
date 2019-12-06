@@ -7,13 +7,14 @@ import {
   CardText,
   CardBody,
   CardTitle,
-  CardSubtitle
+  CardSubtitle,
+  Container
 } from "reactstrap";
 import axios from "axios";
 
 const Image = props => (
   <div className="image-card-container">
-    <Card style={{ width: "20rem" }}>
+    <Card style={{ width: "25rem" }}>
       <CardImg top src={props.image.link} alt="Card image cap" />
       <CardBody>
         <CardTitle>{props.image.name}</CardTitle>
@@ -265,7 +266,11 @@ class Gallery extends Component {
               </div>
             </>
           )}
-          <div className="gallery-exhibit">{this.imageList()}</div>
+          <div class="centered">
+            <section className="cards">
+              <section class="container-fluid">{this.imageList()}</section>
+            </section>
+          </div>
         </div>
       </div>
     );

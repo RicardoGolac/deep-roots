@@ -35,8 +35,8 @@ class Workshops extends Component {
     var tmp;
     return this.state.workshopsArray.map(workshop => {
       i++;
-      if (i % 2 == 0) {
-        if (i == 2 || i == 4 || i == 12 || i == 20) {
+      if (i % 2 === 0) {
+        if (i === 2 || i === 4 || i === 12 || i === 20) {
           return (
             <h3>
               <br />
@@ -46,7 +46,7 @@ class Workshops extends Component {
         } else {
           return <h4>{workshop.contents}</h4>;
         }
-      } else if (i == 3 || i == 13 || i == 21) {
+      } else if (i === 3 || i === 13 || i === 21) {
         console.log("hi");
         return <p>{workshop.contents}</p>;
       } else if (i > 21) {
