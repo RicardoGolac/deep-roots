@@ -141,6 +141,7 @@ class Home extends Component {
                       className="form-control"
                       value={this.state.message}
                       onChange={this.onChangeMessage}
+                      height="200"
                     />
                   </div>
                   <div className="form-group">

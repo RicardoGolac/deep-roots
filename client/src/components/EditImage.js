@@ -147,68 +147,74 @@ class EditImage extends Component {
   render() {
     return (
       <div className="gallery-view-container">
-        <div className="gallery-container">
+        <div className="gallery-edit-container">
           <h3>Edit Image</h3>
-          <form onSubmit={this.onSubmit}>
-            <div className="form-group">
-              <label>Name: </label>
-              <input
-                type="text"
-                required
-                className="form-control"
-                value={this.state.name}
-                onChange={this.onChangeName}
-              />
-            </div>
-            <div className="form-group">
-              <label>Message: </label>
-              <input
-                type="text"
-                required
-                className="form-control"
-                value={this.state.message}
-                onChange={this.onChangeMessage}
-              />
-            </div>
-            <div className="form-group">
-              <label>Link: </label>
-              <input
-                type="text"
-                required
-                className="form-control"
-                value={this.state.link}
-                onChange={this.onChangeLink}
-              />
-            </div>
-            <div className="form-group">
-              <label>Description: </label>
-              <input
-                type="text"
-                required
-                className="form-control"
-                value={this.state.description}
-                onChange={this.onChangeDescription}
-              />
-            </div>
-            <div className="form-group">
-              <label>Price: </label>
-              <input
-                type="number"
-                min="0"
-                required
-                className="form-control"
-                value={this.state.price}
-                onChange={this.onChangePrice}
-              />
-            </div>
-            <div className="form-group">
-              <input
-                type="submit"
-                value="Update Image"
-                className="btn btn-primary"
-              />
-            </div>
-          </form>
+          <div className="form-container">
+            <form onSubmit={this.onSubmit}>
+              <div className="form-group">
+                <label>Name: </label>
+                <input
+                  type="text"
+                  required
+                  className="form-control"
+                  value={this.state.name}
+                  onChange={this.onChangeName}
+                />
+              </div>
+              <div className="form-group">
+                <label>Message: </label>
+                <input
+                  type="text"
+                  required
+                  className="form-control"
+                  value={this.state.message}
+                  onChange={this.onChangeMessage}
+                />
+              </div>
+              <div className="form-group">
+                <label>Description: </label>
+                <input
+                  type="text"
+                  required
+                  className="form-control"
+                  value={this.state.description}
+                  onChange={this.onChangeDescription}
+                />
+              </div>
+              <div className="form-group">
+                <label>Price: </label>
+                <input
+                  type="number"
+                  min="0"
+                  required
+                  className="form-control"
+                  value={this.state.price}
+                  onChange={this.onChangePrice}
+                />
+              </div>
+              <div
+                class="image-upload-container btn btn-bwn"
+                className="form-group"
+              >
+                <label>File: </label>
+                <input
+                  type="file"
+                  required
+                  className="form-control"
+                  value={this.state.file}
+                  onChange={this.onChangeFile}
+                  accept="image/*"
+                />
+              </div>
+              <div className="form-group">
+                <input
+                  type="submit"
+                  value="Update Image Item"
+                  className="btn btn-primary"
+                />
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     );

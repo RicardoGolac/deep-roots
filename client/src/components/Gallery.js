@@ -181,95 +181,85 @@ class Gallery extends Component {
 
   render() {
     return (
-      <div id="gallery-view-container">
-        <div id="gallery-container">
-          {/* This section is only visible when the admin is logged in */}
-          {this.props.loggedIn && (
-            <>
-              <div className="form-container">
-                <h3>Admin Powers Enabled</h3>
-                <form onSubmit={this.onSubmit}>
-                  <div className="form-group">
-                    <label>Name: </label>
-                    <input
-                      type="text"
-                      required
-                      className="form-control"
-                      value={this.state.name}
-                      onChange={this.onChangeName}
-                    />
-                  </div>
-                  <div className="form-group">
-                    <label>Message: </label>
-                    <input
-                      type="text"
-                      required
-                      className="form-control"
-                      value={this.state.message}
-                      onChange={this.onChangeMessage}
-                    />
-                  </div>
-                  {/* <div className="form-group">
-              <label>Link: </label>
-              <input
-                type="text"
-                required
-                className="form-control"
-                value={this.state.link}
-                onChange={this.onChangeLink}
-              />
-            </div> */}
-                  <div className="form-group">
-                    <label>Description: </label>
-                    <input
-                      type="text"
-                      required
-                      className="form-control"
-                      value={this.state.description}
-                      onChange={this.onChangeDescription}
-                    />
-                  </div>
-                  <div className="form-group">
-                    <label>Price: </label>
-                    <input
-                      type="number"
-                      min="0"
-                      required
-                      className="form-control"
-                      value={this.state.price}
-                      onChange={this.onChangePrice}
-                    />
-                  </div>
-                  <div
-                    class="image-upload-container btn btn-bwn"
-                    className="form-group"
-                  >
-                    <label>File: </label>
-                    <input
-                      type="file"
-                      required
-                      className="form-control"
-                      value={this.state.file}
-                      onChange={this.onChangeFile}
-                      accept="image/*"
-                    />
-                  </div>
-                  {/* <div class="img-preview" style={{'background-image: '}}></div> */}
-                  <div className="form-group">
-                    <input
-                      type="submit"
-                      value="Create Gallery Item"
-                      className="btn btn-primary"
-                    />
-                  </div>
-                </form>
-              </div>
-            </>
-          )}
+      <div className="gallery-view-container">
+        <div className="gallery-container">
+          <div className="gallery-edit-container">
+            {/* This section is only visible when the admin is logged in */}
+            {this.props.loggedIn && (
+              <>
+                <div className="form-container">
+                  <h3>Admin Powers Enabled</h3>
+                  <form onSubmit={this.onSubmit}>
+                    <div className="form-group">
+                      <label>Name: </label>
+                      <input
+                        type="text"
+                        required
+                        className="form-control"
+                        value={this.state.name}
+                        onChange={this.onChangeName}
+                      />
+                    </div>
+                    <div className="form-group">
+                      <label>Message: </label>
+                      <input
+                        type="text"
+                        required
+                        className="form-control"
+                        value={this.state.message}
+                        onChange={this.onChangeMessage}
+                      />
+                    </div>
+                    <div className="form-group">
+                      <label>Description: </label>
+                      <input
+                        type="text"
+                        required
+                        className="form-control"
+                        value={this.state.description}
+                        onChange={this.onChangeDescription}
+                      />
+                    </div>
+                    <div className="form-group">
+                      <label>Price: </label>
+                      <input
+                        type="number"
+                        min="0"
+                        required
+                        className="form-control"
+                        value={this.state.price}
+                        onChange={this.onChangePrice}
+                      />
+                    </div>
+                    <div
+                      class="image-upload-container btn btn-bwn"
+                      className="form-group"
+                    >
+                      <label>File: </label>
+                      <input
+                        type="file"
+                        required
+                        className="form-control"
+                        value={this.state.file}
+                        onChange={this.onChangeFile}
+                        accept="image/*"
+                      />
+                    </div>
+                    {/* <div class="img-preview" style={{'background-image: '}}></div> */}
+                    <div className="form-group">
+                      <input
+                        type="submit"
+                        value="Create Gallery Item"
+                        className="btn btn-primary"
+                      />
+                    </div>
+                  </form>
+                </div>
+              </>
+            )}
+          </div>
           <div class="centered">
-            <section className="cards">
-              <section class="container-fluid">{this.imageList()}</section>
-            </section>
+            <section className="cards">{this.imageList()}</section>
           </div>
         </div>
       </div>
