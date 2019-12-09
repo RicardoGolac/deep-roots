@@ -70,11 +70,11 @@ class AppNavBar extends Component {
               </NavItem>
               {!this.props.loggedIn ? (
                 <>
-                  <NavItem>
+                  {/* <NavItem>
                     <NavLink tag={Link} to="/users/register">
                       Register
                     </NavLink>
-                  </NavItem>
+                  </NavItem> */}
                   <NavItem>
                     <NavLink tag={Link} to="/users/login">
                       Login
