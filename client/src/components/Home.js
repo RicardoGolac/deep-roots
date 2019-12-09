@@ -28,6 +28,7 @@ class Home extends Component {
     super(props);
 
     // Bind all function listed below like so
+    this.getHomes = this.getHomes.bind(this);
     this.onChangeName = this.onChangeName.bind(this);
     this.onChangeMessage = this.onChangeMessage.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
@@ -40,13 +41,17 @@ class Home extends Component {
       homes: []
     };
   }
+
+  getHomes() {}
   // Temporary function
   componentDidMount() {
+    /* this.getHomes(); */
     axios
-      .get("http://localhost:5000/")
+      .get("/homes")
       .then(response => {
         const data = response.data;
         this.setState({ homes: data });
+        console.log("Homes added using proxy!");
       })
       .catch(error => {
         console.log(error);
@@ -69,15 +74,11 @@ class Home extends Component {
     // This first line prevents the regular html form from doing what
     // it normally does when a submit button is pressed
     e.preventDefault();
-
     const home = {
       name: this.state.name,
       message: this.state.message
     };
-    axios
-      .post("http://localhost:5000/add", home)
-      .then(res => console.log(res.data));
-
+    axios.post("/add", home).then(res => console.log(res.data));
     // Clear the inputs
     this.setState({
       name: "",
@@ -86,9 +87,7 @@ class Home extends Component {
   }
 
   deleteHome(id) {
-    axios
-      .delete("http://localhost:5000/" + id)
-      .then(res => console.log("Home deleted!"));
+    axios.delete("/deletehome/" + id).then(res => console.log("Home deleted!"));
 
     this.setState({
       homes: this.state.homes.filter(el => el._id !== id)

@@ -27,7 +27,7 @@ class EditImage extends Component {
   componentDidMount() {
     // GET image by id
     axios
-      .get("http://localhost:5000/galleery/" + this.props.match.params.id)
+      .get("/gallery/" + this.props.match.params.id)
       .then(res => {
         this.setState({
           name: res.data.name,
@@ -40,18 +40,6 @@ class EditImage extends Component {
       .catch(function(err) {
         console.log(err);
       });
-    // GET All images
-    axios
-      .get("http://localhost:5000/gallery")
-      .then(res => {
-        const data = res.data;
-        this.setState({ images: data });
-        //console.log(this.state.images);
-      })
-      .catch(err => {
-        console.log(err);
-      });
-    //console.log(this.state.images);
   }
 
   onChangeName(e) {
@@ -97,7 +85,7 @@ class EditImage extends Component {
     formData.append("image", this.state.selectedFile);
 
     const newLink = await axios
-      .post("http://localhost:5000/images/image-upload", formData)
+      .post("/images/image-upload", formData)
       .then(res => {
         console.log(res.data);
 
@@ -115,11 +103,7 @@ class EditImage extends Component {
         };
         console.log(image);
         axios
-          .post(
-            "http://localhost:5000/gallery/update/" +
-              this.props.match.params.id,
-            image
-          )
+          .post("/gallery/update/" + this.props.match.params.id, image)
           .then(res => console.log(res.data))
           .catch(err => console.log(err));
       })

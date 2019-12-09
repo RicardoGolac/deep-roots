@@ -23,7 +23,7 @@ class EditWorkshops extends Component {
 
   componentWillMount() {
     axios
-      .get("http://localhost:5000/workshops/" + this.props.match.params.id)
+      .get("/workshops/" + this.props.match.params.id)
       .then(res => {
         this.setState({
           sectionTitle: res.data.sectionTitle,
@@ -35,17 +35,6 @@ class EditWorkshops extends Component {
       .catch(function(error) {
         console.log(error);
       });
-    axios
-      .get("http://localhost:5000/workshops/")
-      .then(res => {
-        const data = res.data;
-        this.setState({ workshopsArray: data });
-        console.log(this.state.workshopsArray);
-      })
-      .catch(err => {
-        console.log(err);
-      });
-    console.log(this.state.workshopsArray);
   }
 
   onChangeST(e) {
@@ -83,13 +72,9 @@ class EditWorkshops extends Component {
       contents: this.state.contents,
       price: this.state.price
     };
-    console.log(workshop);
     axios
-      .post(
-        "http://localhost:5000/workshops/update/" + this.props.match.params.id,
-        workshop
-      )
-      .then(res => console.log(res.data));
+      .post("/workshops/update/" + this.props.match.params.id, workshop)
+      .then(res => console.log("Workshop Updated!"));
 
     // Clear the inputs
     this.setState({

@@ -4,7 +4,7 @@ const router = express.Router();
 const Home = require("../models/HomeSchema");
 
 // Get all Homes
-router.get("/", (req, res) => {
+router.get("/homes", (req, res) => {
   Home.find()
     .then(homes => res.json(homes))
     .catch(err => res.status(400).json("Error: " + err));
@@ -40,14 +40,14 @@ router.post("/update/:id", (req, res) => {
 });
 
 // Find By ID
-router.get("/:id", (req, res) => {
+router.get("/home/:id", (req, res) => {
   Home.findById(req.params.id)
     .then(home => res.json(home))
     .catch(err => res.status(404).json("Error: " + err));
 });
 
 // Delete by ID
-router.delete("/:id", (req, res) => {
+router.delete("/deletehome/:id", (req, res) => {
   Home.findByIdAndDelete(req.params.id)
     .then(() => res.json("Home deleted!"))
     .catch(err => res.status(404).json("Error: " + err));

@@ -48,11 +48,10 @@ class Workshops extends Component {
 
   componentWillMount() {
     axios
-      .get("http://localhost:5000/workshops/")
+      .get("/workshops/")
       .then(res => {
         const data = res.data;
         this.setState({ workshopsArray: data });
-        console.log(this.state.workshopsArray);
       })
       .catch(err => {
         console.log(err);
@@ -94,9 +93,7 @@ class Workshops extends Component {
       contents: this.state.contents,
       price: this.state.price
     };
-    axios
-      .post("http://localhost:5000/workshops/add", workshop)
-      .then(res => console.log(res.data));
+    axios.post("/workshops/add", workshop).then(res => console.log(res.data));
 
     // Clear the inputs
     this.setState({
@@ -109,7 +106,7 @@ class Workshops extends Component {
 
   deleteWorkshop(id) {
     axios
-      .delete("http://localhost:5000/workshops/" + id)
+      .delete("/workshops/" + id)
       .then(res => console.log("Object deleted: " + res.data))
       .catch(err => {
         console.log(err);

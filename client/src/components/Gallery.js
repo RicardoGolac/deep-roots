@@ -64,16 +64,14 @@ class Gallery extends Component {
 
   componentDidMount() {
     axios
-      .get("http://localhost:5000/gallery/")
+      .get("/gallery/")
       .then(res => {
         const data = res.data;
         this.setState({ images: data });
-        console.log(this.state.images);
       })
       .catch(err => {
         console.log(err);
       });
-    console.log(this.state.images);
   }
 
   onChangeName(e) {
@@ -92,14 +90,7 @@ class Gallery extends Component {
     this.setState({
       selectedFile: e.target.files[0]
     });
-    console.log(this.state.file);
   }
-
-  /* onChangeLink(e) {
-    this.setState({
-      link: e.target.value
-    });
-  } */
 
   onChangeDescription(e) {
     this.setState({
@@ -119,12 +110,12 @@ class Gallery extends Component {
     formData.append("image", this.state.selectedFile);
 
     const newLink = await axios
-      .post("http://localhost:5000/images/image-upload", formData)
+      .post("/images/image-upload", formData)
       .then(res => {
-        console.log(res.data);
+        //console.log(res.data);
 
         const data = res.data;
-        console.log("Image URL from data is: " + data);
+        //console.log("Image URL from data is: " + data);
         //console.log("Image URL from data is: " + data);
         this.setState({ link: data });
         // Retrieve S3 link from uploaded file
@@ -136,10 +127,10 @@ class Gallery extends Component {
           description: this.state.description,
           price: this.state.price
         };
-        console.log(image);
+        //console.log(image);
         axios
-          .post("http://localhost:5000/gallery/add", image)
-          .then(res => console.log(res.data))
+          .post("/gallery/add", image)
+          .then(res => console.log("Image Added!"))
           .catch(err => console.log(err));
       })
       .catch(err => console.log(err));
@@ -155,9 +146,7 @@ class Gallery extends Component {
   };
 
   deleteImage(id) {
-    axios
-      .delete("http://localhost:5000/gallery/" + id)
-      .then(res => console.log(res.data));
+    axios.delete("/gallery/" + id).then(res => console.log(res.data));
 
     this.setState({
       images: this.state.images.filter(el => el._id !== id)

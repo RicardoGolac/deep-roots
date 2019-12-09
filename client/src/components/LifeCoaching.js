@@ -54,7 +54,7 @@ class LifeCoaching extends Component {
       text: this.state.newText
     };
     axios
-      .post("http://localhost:5000/editLC/edit/0", newt)
+      .post("/editLC/edit/0", newt)
       .then(response => {
         console.log(newt);
       })
@@ -69,7 +69,7 @@ class LifeCoaching extends Component {
       text: this.state.newRates
     };
     axios
-      .post("http://localhost:5000/editLC/edit/1", newt)
+      .post("/editLC/edit/1", newt)
       .then(response => {
         console.log(newt);
       })
@@ -84,7 +84,7 @@ class LifeCoaching extends Component {
       text: this.state.newBen
     };
     axios
-      .post("http://localhost:5000/editLC/edit/2", newt)
+      .post("/editLC/edit/2", newt)
       .then(response => {
         console.log(newt);
       })
@@ -99,7 +99,7 @@ class LifeCoaching extends Component {
       text: this.state.newHowTo
     };
     axios
-      .post("http://localhost:5000/editLC/edit/3", newt)
+      .post("/editLC/edit/3", newt)
       .then(response => {
         console.log(newt);
       })
@@ -116,7 +116,7 @@ class LifeCoaching extends Component {
   }
   componentWillMount() {
     axios
-      .get("http://localhost:5000/editLC/display/0")
+      .get("/editLC/display/0")
       .then(response => {
         const data = response.data;
         var txt = JSON.stringify(data.text);
@@ -127,7 +127,7 @@ class LifeCoaching extends Component {
         console.log(error);
       });
     axios
-      .get("http://localhost:5000/editLC/display/1")
+      .get("/editLC/display/1")
       .then(response => {
         const data = response.data;
         var txt = JSON.stringify(data.text);
@@ -138,7 +138,7 @@ class LifeCoaching extends Component {
         console.log(error);
       });
     axios
-      .get("http://localhost:5000/editLC/display/2")
+      .get("/editLC/display/2")
       .then(response => {
         const data = response.data;
         var txt = JSON.stringify(data.text);
@@ -149,7 +149,7 @@ class LifeCoaching extends Component {
         console.log(error);
       });
     axios
-      .get("http://localhost:5000/editLC/display/3")
+      .get("/editLC/display/3")
       .then(response => {
         const data = response.data;
         var txt = JSON.stringify(data.text);
@@ -168,7 +168,7 @@ class LifeCoaching extends Component {
     const message = document.getElementById("message").value;
     axios({
       method: "POST",
-      url: "http://localhost:3000/send/question",
+      url: "/send/question",
       data: {
         name: name,
         email: email,

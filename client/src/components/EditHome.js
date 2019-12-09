@@ -23,8 +23,9 @@ class EditHome extends Component {
 
   // Temporary function
   componentDidMount() {
+    // Get Home by ID
     axios
-      .get("http://localhost:5000/" + this.props.match.params.id)
+      .get("/home/" + this.props.match.params.id)
       .then(res => {
         this.setState({
           name: res.data.name,
@@ -32,19 +33,18 @@ class EditHome extends Component {
         });
       })
       .catch(function(error) {
-        //console.log(error);
+        console.log(error);
       });
+    // Get all homes
     axios
-      .get("http://localhost:5000/")
+      .get("/homes")
       .then(response => {
         const data = response.data;
         this.setState({ homes: data });
-        //console.log(this.state.homes);
       })
       .catch(error => {
-        //console.log(error);
+        console.log(error);
       });
-    console.log(this.state.homes);
   }
 
   onChangeName(e) {
@@ -69,7 +69,7 @@ class EditHome extends Component {
       message: this.state.message
     };
     axios
-      .post("http://localhost:5000/update/" + this.props.match.params.id, home)
+      .post("/update/" + this.props.match.params.id, home)
       .then(res => console.log(res.data));
 
     // Clear the inputs

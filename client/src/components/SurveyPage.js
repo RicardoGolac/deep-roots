@@ -284,7 +284,7 @@ class SurveyPage extends Component {
 
     axios({
       method: "POST",
-      url: "http://localhost:3000/send/complete",
+      url: "/send/complete",
       data: {
         messsage: survey.data
       }
