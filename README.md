@@ -14,12 +14,25 @@ Deployed Website Available [here](https://guarded-scrubland-62406.herokuapp.com/
 
 ## Code Sources
 
-We used code from Bootstrap to help build the front end of our website
+We used code from Reactstrap to help build the front end of our website.
+We also used code from react-social-icons and surveyjs-react
 
 ## Website Features
 
 Landing Page:
-![Homepage](/photos/Homepage.PNG "Homepage")
+![Homepage](/photos/Homepage.PNG?raw=true "Homepage")
+
+Gallery Page:
+![Gallery](/photos/Gallery.PNG?raw=true "Gallery")
+
+Life Coaching Page:
+![LifecoachingPage](/photos/LifeCoaching.PNG?raw=true "LC")
+
+Workshops:
+![Workshops](/photos/WorkshopsPage.PNG?raw=true "Workshop")
+
+Admin Login:
+![Login](/photos/LoginPage.PNG?raw=true "Login")
 
 ## Contributing to Deep Roots
 
@@ -63,3 +76,7 @@ Landing Page:
    - Provide a good description of what changes you made
    - Submit your pull request
 8. Wait for someone to review and approve your changes
+
+### Changing Database and Server Connections
+
+To change API Keys, copy the keys_example.js file in /server/config and enter in your own keys.
