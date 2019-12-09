@@ -55,7 +55,7 @@ router.get("/:id", (req, res) => {
 // Delete by ID
 router.delete("/:id", (req, res) => {
   Image.findByIdAndDelete(req.params.id)
-    .then(() => res.json("Exercise deleted!"))
+    .then(() => res.json("Image deleted!"))
     .catch(err => res.status(404).json("Error: " + err));
 });
 

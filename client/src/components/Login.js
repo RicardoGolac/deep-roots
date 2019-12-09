@@ -6,7 +6,6 @@ class Login extends Component {
   constructor(props) {
     // Necessary for class components
     super(props);
-    console.log(props);
 
     // binding this TODO: Convert class components to hooks
     this.onChange = this.onChange.bind(this);
@@ -46,7 +45,7 @@ class Login extends Component {
           isLoading: false
         });
 
-        console.log(`Successfully logged in! ${JSON.stringify(data)}`);
+        /* console.log(`Successfully logged in! ${JSON.stringify(data)}`); */
 
         this.props.history.push("/dashboard");
       } else {

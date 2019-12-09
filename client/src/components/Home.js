@@ -37,11 +37,9 @@ class Home extends Component {
       name: "",
       message: "",
       // homes will hold all home objects
-      // We will try and keep it to one
       homes: []
     };
   }
-
   // Temporary function
   componentDidMount() {
     axios
@@ -49,12 +47,10 @@ class Home extends Component {
       .then(response => {
         const data = response.data;
         this.setState({ homes: data });
-        console.log(this.state.homes);
       })
       .catch(error => {
         console.log(error);
       });
-    console.log(this.state.homes);
   }
 
   onChangeName(e) {
@@ -78,7 +74,6 @@ class Home extends Component {
       name: this.state.name,
       message: this.state.message
     };
-    console.log(home);
     axios
       .post("http://localhost:5000/add", home)
       .then(res => console.log(res.data));
@@ -93,7 +88,7 @@ class Home extends Component {
   deleteHome(id) {
     axios
       .delete("http://localhost:5000/" + id)
-      .then(res => console.log(res.data));
+      .then(res => console.log("Home deleted!"));
 
     this.setState({
       homes: this.state.homes.filter(el => el._id !== id)
@@ -101,16 +96,18 @@ class Home extends Component {
   }
 
   homeList() {
-    return this.state.homes.map(currentHome => {
-      return (
-        <HomeAbout
-          home={currentHome}
-          deleteHome={this.deleteHome}
-          key={currentHome._id}
-          loggedIn={this.props.loggedIn}
-        />
-      );
-    });
+    if (this.state.homes.length > 0) {
+      return this.state.homes.map(currentHome => {
+        return (
+          <HomeAbout
+            home={currentHome}
+            deleteHome={this.deleteHome}
+            key={currentHome._id}
+            loggedIn={this.props.loggedIn}
+          />
+        );
+      });
+    } else return;
   }
 
   render() {
@@ -157,6 +154,8 @@ class Home extends Component {
           )}
           {/* Everything below is always rendered */}
           <div className="home-about">{this.homeList()}</div>
+          {/* Deeproots Tree */}
+          <img src={require("./photos/tree.PNG")} alt="Deeproots Tree" />
         </div>
       </div>
     );

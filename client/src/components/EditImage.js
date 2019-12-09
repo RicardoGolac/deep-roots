@@ -9,11 +9,9 @@ class EditImage extends Component {
     this.onChangeName = this.onChangeName.bind(this);
     this.onChangeMessage = this.onChangeMessage.bind(this);
     this.onChangeFile = this.onChangeFile.bind(this);
-    //this.onChangeLink = this.onChangeLink.bind(this);
     this.onChangeDescription = this.onChangeDescription.bind(this);
     this.onChangePrice = this.onChangePrice.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
-    //this.deleteImage = this.deleteImage.bind(this);
 
     this.state = {
       name: "",
@@ -48,12 +46,12 @@ class EditImage extends Component {
       .then(res => {
         const data = res.data;
         this.setState({ images: data });
-        console.log(this.state.images);
+        //console.log(this.state.images);
       })
       .catch(err => {
         console.log(err);
       });
-    console.log(this.state.images);
+    //console.log(this.state.images);
   }
 
   onChangeName(e) {
@@ -72,14 +70,8 @@ class EditImage extends Component {
     this.setState({
       selectedFile: e.target.files[0]
     });
-    console.log(this.state.file);
+    //console.log(this.state.file);
   }
-
-  /* onChangeLink(e) {
-    this.setState({
-      link: e.target.value
-    });
-  } */
 
   onChangeLink(e) {
     this.setState({
@@ -111,7 +103,6 @@ class EditImage extends Component {
 
         const data = res.data;
         console.log("Image URL from data is: " + data);
-        //console.log("Image URL from data is: " + data);
         this.setState({ link: data });
         // Retrieve S3 link from uploaded file
         // set 'link' to the corresponding file

@@ -7,8 +7,7 @@ import {
   CardText,
   CardBody,
   CardTitle,
-  CardSubtitle,
-  Container
+  CardSubtitle
 } from "reactstrap";
 import axios from "axios";
 
@@ -47,7 +46,6 @@ class Gallery extends Component {
     this.onChangeName = this.onChangeName.bind(this);
     this.onChangeMessage = this.onChangeMessage.bind(this);
     this.onChangeFile = this.onChangeFile.bind(this);
-    //this.onChangeLink = this.onChangeLink.bind(this);
     this.onChangeDescription = this.onChangeDescription.bind(this);
     this.onChangePrice = this.onChangePrice.bind(this);
     this.onSubmit = this.onSubmit.bind(this);

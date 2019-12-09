@@ -19,10 +19,10 @@ class AuthenticatedComponent extends Component {
       // User is not authorized or their session expired
       // Move them to the login page to get a new session
       if (!data.success) {
-        console.log("Session ended: " + JSON.stringify(data));
+        //console.log("Session ended: " + JSON.stringify(data));
         this.props.history.push("/users/login");
       } else {
-        console.log("Authenticated user data: " + JSON.stringify(data));
+        //console.log("Authenticated user data: " + JSON.stringify(data));
       }
     });
   }

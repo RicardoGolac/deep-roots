@@ -49,29 +49,3 @@ const LCCard = props => {
 };
 
 export default LCCard;
-
-/*
-        <Card>
-          <CardImg top width="100%" src={require("./photos/clc.jpg")} alt="clc image" />
-          <CardBody>
-            <CardText>{props.infoText}</CardText>
-          </CardBody>
-        </Card>
-*/
-/*
-<Card>
-      <CardImg top width="100%" src={require("./photos/clc.jpg")} alt="clc image" />
-      <CardBody>
-      <CardText>{props.infoText}</CardText>
-      <form>
-          <textarea
-          type="text"
-          placeholder="New Description"
-          ref={ (input) => newText = input }
-          onChange={updateText.bind(this)}
-          ></textarea>
-      </form>
-      <Button onClick={() => props.editText()}>Edit</Button>
-      </CardBody>
-  </Card>
-*/

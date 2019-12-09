@@ -48,7 +48,7 @@ class Register extends Component {
 
     //this statement is only for development purposes
     //this should be removed from for a production build
-    console.log(user);
+    /* console.log(user); */
 
     axios.post("/users/register", user).then(response => {
       if (response.data.success) {
@@ -61,7 +61,7 @@ class Register extends Component {
           isLoading: false
         });
 
-        console.log(`Finished! ${JSON.stringify(response.data)}`);
+        /* console.log(`Finished! ${JSON.stringify(response.data)}`); */
         //redirect to login page
         this.props.history.push("/login");
       } else {
@@ -71,7 +71,7 @@ class Register extends Component {
           isLoading: false,
           registerErrors: response.data.message
         });
-        console.log(JSON.stringify(this.state.registerErrors));
+        /* console.log(JSON.stringify(this.state.registerErrors)); */
       }
     });
   }

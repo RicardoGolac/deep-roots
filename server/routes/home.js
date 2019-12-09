@@ -49,7 +49,7 @@ router.get("/:id", (req, res) => {
 // Delete by ID
 router.delete("/:id", (req, res) => {
   Home.findByIdAndDelete(req.params.id)
-    .then(() => res.json("Exercise deleted!"))
+    .then(() => res.json("Home deleted!"))
     .catch(err => res.status(404).json("Error: " + err));
 });
 

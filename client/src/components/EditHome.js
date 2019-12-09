@@ -32,17 +32,17 @@ class EditHome extends Component {
         });
       })
       .catch(function(error) {
-        console.log(error);
+        //console.log(error);
       });
     axios
       .get("http://localhost:5000/")
       .then(response => {
         const data = response.data;
         this.setState({ homes: data });
-        console.log(this.state.homes);
+        //console.log(this.state.homes);
       })
       .catch(error => {
-        console.log(error);
+        //console.log(error);
       });
     console.log(this.state.homes);
   }
@@ -68,7 +68,6 @@ class EditHome extends Component {
       name: this.state.name,
       message: this.state.message
     };
-    console.log(home);
     axios
       .post("http://localhost:5000/update/" + this.props.match.params.id, home)
       .then(res => console.log(res.data));

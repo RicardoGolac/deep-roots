@@ -20,7 +20,7 @@ function Footer() {
             </Col>
           </Row>
           <div className="text-center small copyright">
-            © Deeproots Creative
+            © Deeproots Arts & Culture Creative Services LLC
           </div>
         </Container>
       </div>

@@ -1,40 +1,13 @@
 const express = require("express");
 const router = express.Router();
 const passport = require("passport");
-//const bcrypt = require("bcrypt.js");
-//const db = require("./server/config/keys");
 
 // User Model
 const User = require("../models/UserSchema");
 
-// @route POST api/auth
-// @desc  Auth user
-// @access Public
-/* router.post("/", (req, res) => {}); */
-
-// @route POST api/items
-// @desc  Create An Item
-// @access Public
-/* router.post("/", (req, res) => {
-  const newItem = new Item({
-    name: req.body.name
-  });
-
-  newItem.save().then(item => res.json(item));
-}); */
-
-// @route DELETE api/items/:id
-// @desc  Delete An Item
-// @access Public
-/* router.delete("/:id", (req, res) => {
-  Item.findById(req.params.id)
-    .then(item => item.remove().then(() => res.json({ success: true })))
-    .catch(err => res.status(404).json({ success: false }));
-}); */
-
 // Verify - Used for frontend
 router.get("/verify", (req, res) => {
-  console.log(
+  /* console.log(
     "This is res.locals.session from /verify" +
       JSON.stringify(res.locals.session)
   );
@@ -42,7 +15,7 @@ router.get("/verify", (req, res) => {
   console.log(
     "This is res.locals.user from /verify" + JSON.stringify(res.locals.user)
   );
-  console.log("This is req.user from /verify" + JSON.stringify(req.user));
+  console.log("This is req.user from /verify" + JSON.stringify(req.user)); */
   if (req.isAuthenticated()) {
     const clientUser = {
       id: req.user._id,
@@ -121,7 +94,7 @@ router.post("/register", (req, res) => {
     console.log(newUser);
     newUser.password = newUser.generateHash(password);
     newUser.save((error, user) => {
-      console.log("This is req.session from /register: " + req.session);
+      /* console.log("This is req.session from /register: " + req.session); */
       if (error) {
         errors.push("Server error: registering new user to database");
         return res.send({

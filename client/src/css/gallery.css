@@ -67,8 +67,11 @@
 
 /* IMAGE CONTAINER */
 .image-card-container {
-  padding: 10px 0px 10px 0px;
-  flex: 0 1 24%;
+  /* padding: 10px 0px 10px 0px;
+  flex: 0 1 24%; */
+  flex: 1 0 500px;
+  box-sizing: border-box;
+  margin: 1rem 0.25em;
 }
 
 .cards {

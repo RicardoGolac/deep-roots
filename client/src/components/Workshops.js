@@ -57,7 +57,6 @@ class Workshops extends Component {
       .catch(err => {
         console.log(err);
       });
-    console.log(this.state.workshopsArray);
   }
 
   onChangeST(e) {
@@ -95,7 +94,6 @@ class Workshops extends Component {
       contents: this.state.contents,
       price: this.state.price
     };
-    console.log(workshop);
     axios
       .post("http://localhost:5000/workshops/add", workshop)
       .then(res => console.log(res.data));
@@ -122,7 +120,6 @@ class Workshops extends Component {
     });
   }
   workshopList() {
-    console.log(this.state.workshopsArray);
     return this.state.workshopsArray.map(curWorkshop => {
       return (
         <WorkshopItem
@@ -202,7 +199,7 @@ class Workshops extends Component {
             <div class="col-sm-3 text-center">
               <img
                 className="image"
-                src={require("./photos/DlPM9DZVAAAecZm.jpeg")}
+                src={require("./photos/Workshop1.jpg")}
                 alt="Errornot found"
               ></img>
             </div>
@@ -217,7 +214,7 @@ class Workshops extends Component {
             <div class="col-sm-3 text-center">
               <img
                 className="image"
-                src={require("./photos/DlPLxbtVsAEfyUh.jpeg")}
+                src={require("./photos/Workshop2.jpg")}
                 alt="Error: not found"
               ></img>
             </div>
