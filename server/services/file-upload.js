@@ -2,14 +2,20 @@ const aws = require("aws-sdk");
 const multer = require("multer");
 const multerS3 = require("multer-s3");
 
-const config = require("../config/keys");
-
-aws.config.update({
-  secretAccessKey:
-    process.env.AWS_secretAccessKey || config.AWS_secretAccessKey,
-  accessKeyId: process.env.AWS_accessKeyId || config.AWS_accessKeyId,
-  region: "us-east-2"
-});
+try {
+  const config = require("../config/keys");
+  aws.config.update({
+    secretAccessKey: config.AWS_secretAccessKey,
+    accessKeyId: config.AWS_accessKeyId,
+    region: "us-east-2"
+  });
+} catch (ex) {
+  aws.config.update({
+    secretAccessKey: process.env.AWS_secretAccessKey,
+    accessKeyId: process.env.AWS_accessKeyId,
+    region: "us-east-2"
+  });
+}
 
 const s3 = new aws.S3();
 
