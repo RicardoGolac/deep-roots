@@ -1,6 +1,7 @@
 # Deep Roots
 
 This is a MERN Stack web application that serves as the main website for artist Turbado Marabou.
+Deployed Website Available [here](https://guarded-scrubland-62406.herokuapp.com/):
 
 ### Team Members:
 
@@ -10,6 +11,15 @@ This is a MERN Stack web application that serves as the main website for artist 
 4. Aleksei "Sandro" Witty
 5. Irene Allman
 6. Emily Bauer
+
+## Code Sources
+
+We used code from Bootstrap to help build the front end of our website
+
+## Website Features
+
+Landing Page:
+![Homepage](/photos/Homepage.PNG "Homepage")
 
 ## Contributing to Deep Roots
 
