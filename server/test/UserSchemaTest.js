@@ -26,7 +26,7 @@ describe("User Schema Unit Tests", function() {
     // Set timeout
     this.timeout(10000);
 
-    it("saves properly when name, email, and password are provide", function(done) {
+    it("saves properly when name, email, and password are provided", function(done) {
       new User({
         name: user.name,
         email: user.email,

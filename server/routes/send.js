@@ -35,7 +35,7 @@ router.post("/complete", jsonParser, (req, res) => {
   var message = JSON.stringify(req.body, null, "\t");
   var mail = {
     from: "deeprootssurveybot@gmail.com",
-    to: "deeprootssurveybot@gmail.com",
+    to: "deeproots16@gmail.com",
     subject: "New Life Coaching Survey Filled Out!",
     text: message
   };
@@ -61,7 +61,7 @@ router.post("/question", bodyParser.text(), (req, res) => {
 
   var mail = {
     from: "deeprootssurveybot@gmail.com",
-    to: "deeprootssurveybot@gmail.com",
+    to: "deeproots16@gmail.com",
     subject: "Someone has a question about life coaching!",
     text: content
   };
